@@ -9,48 +9,34 @@ interface SeoBlogPost {
 
 const SEO_BLOG_POSTS: SeoBlogPost[] = [
   {
-    title:
-      "TAS - 16 Years of Whole-Child Education with a Seamless Learning Pathway",
+    title: "IB World School",
     excerpt:
-      "Looking for an international school for your child? TAS offers a clear learning journey from IB PYP to AP, helping students grow academically and make confident university choices. The school is built on four whole-child pillars and is expanding toward the IB Diploma Programme.",
-    image:
-      "/images/68f98e0a1e0e678a04a36e03_study-abroad-pathway-at-TAS-p-800.jpg",
+      "CIS được công nhận là IB World School, giảng dạy chương trình Tú tài Quốc tế (IB Diploma Programme) — nền tảng học thuật được các trường đại học hàng đầu thế giới công nhận.",
+    image: "/images/cis-partner-ib.png",
   },
   {
-    title:
-      "2025 | A Year of Innovation, Upgrading, and Growth at TAS International School",
+    title: "College Board — Advanced Placement Program",
     excerpt:
-      "2025 marks a major milestone for TAS International School with strong academic achievements, campus upgrades, IB PYP authorization, and IB DP Candidate status, reinforcing a sustainable education strategy for Mustangs.",
-    image:
-      "/images/67d3d14a91e70f15828cf659_Annotation-2025-03-14-134835-p-800.png",
+      "CIS là thành viên chính thức của College Board, triển khai chương trình Advanced Placement (AP) giúp học sinh tích lũy tín chỉ đại học ngay từ bậc trung học phổ thông.",
+    image: "/images/cis-partner-ap.png",
   },
   {
-    title:
-      "IB PYP at TAS – Learning Through Inquiry, Nurturing Future-Ready Skills",
+    title: "Council of International Schools — Internationally Accredited School",
     excerpt:
-      "The IB Primary Years Programme (PYP) is one of the world's most advanced educational frameworks for elementary students. At The American School (TAS), the PYP is offered from Grade 1 to Grade 5, providing an active, holistic, and experience-rich learning journey that helps children develop essential thinking skills, core values, and the mindset of global citizens from their early years.",
-    image: "/images/68ac12a71356a15cc6956b56_Screenshot-2025-08-25-143626-p-800.webp",
+      "CIS được kiểm định quốc tế bởi Council of International Schools (CIS), khẳng định chất lượng giáo dục đạt chuẩn quốc tế trên toàn diện các mặt vận hành nhà trường.",
+    image: "/images/cis-partner-cis-accredited.png",
   },
   {
-    title:
-      "TAS Students Earn Over USD 200,000 in Scholarships from Top Universities Worldwide",
+    title: "Cognia Accredited",
     excerpt:
-      "For many consecutive years, students of The American School (TAS) — widely recognized as one of the best international schools in Ho Chi Minh City — have collectively earned more than USD 200,000 in scholarships from prestigious universities around the world.",
-    image: "/images/68ac1b263153ae0584b01785_Screenshot-2025-08-25-151128-p-500.webp",
+      "Chứng nhận kiểm định từ Cognia (NCA CASI / NWAC / SACS CASI) — một trong những tổ chức kiểm định giáo dục uy tín hàng đầu tại Hoa Kỳ.",
+    image: "/images/cis-partner-cognia.png",
   },
   {
-    title: "Toplist International Schools in District 2",
+    title: "WASC — Accrediting Commission for Schools",
     excerpt:
-      "Explore international schools in District 2: curriculum, facilities, faculty, and why many parents choose TAS for their child's holistic development.",
-    image:
-      "/images/68f98e0a1e0e678a04a36e03_study-abroad-pathway-at-TAS-p-1080.jpg",
-  },
-  {
-    title: "TAS International School Curriculum - Full U.S. Learning Path",
-    excerpt:
-      "Explore TAS's international school curriculum: Common Core, AP, and Candidate IB PYP & IBDP. A seamless, personalized U.S. pathway led by experienced international teachers.",
-    image:
-      "/images/67d3d14a91e70f15828cf659_Annotation-2025-03-14-134835-p-1080.png",
+      "CIS được công nhận đầy đủ bởi WASC (Western Association of Schools and Colleges), một trong sáu tổ chức kiểm định vùng được công nhận tại Hoa Kỳ.",
+    image: "/images/cis-partner-wasc.png",
   },
 ];
 
@@ -65,12 +51,12 @@ export function SeoBlogCarouselSection() {
             key={post.title}
             className="flex flex-col gap-6 sm:flex-row sm:items-start"
           >
-            <div className="relative aspect-[4/3] w-40 shrink-0 overflow-hidden rounded-md">
+            <div className="relative aspect-[4/3] w-40 shrink-0 overflow-hidden rounded-md bg-tas-surface p-4">
               <Image
                 src={post.image}
                 alt={post.title}
                 fill
-                className="object-cover"
+                className="object-contain p-4"
                 sizes="160px"
               />
             </div>

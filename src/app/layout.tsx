@@ -13,15 +13,12 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
-  title: "Trường Quốc tế TAS - The American School",
+  title: "Trường Quốc Tế CIS - The Canadian International School",
   description:
-    "The American School (TAS) fosters the growth of the whole child in a multicultural environment aligned with American educational models.",
+    "CIS - Trường Quốc tế Canada mang đến chương trình giáo dục toàn diện cho học sinh từ Lớp 1 đến Lớp 12, với chương trình Tú tài Quốc tế (IB Diploma) được công nhận toàn cầu.",
   icons: {
     icon: "/seo/favicon-32.png",
     apple: "/seo/apple-touch-icon.png",
-  },
-  openGraph: {
-    images: ["/seo/og-image.png"],
   },
 };
 

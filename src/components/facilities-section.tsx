@@ -1,16 +1,11 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-const BUILDING_EXTERIOR_IMG =
-  "/images/67d3d14a91e70f15828cf659_Annotation-2025-03-14-134835-p-1600.png";
-const STUDENTS_WALKING_IMG =
-  "/images/68ac10c45060a071261270ab_Day1_UNISMUN-067-p-1600.webp";
-const GOLF_SIMULATOR_IMG =
-  "/images/68ac1b263153ae0584b01785_Screenshot-2025-08-25-151128.webp";
-const LIBRARY_MEDIA_IMG =
-  "/images/68f98e0a1e0e678a04a36e03_study-abroad-pathway-at-TAS-p-800.jpg";
-const GRADUATION_IMG =
-  "/images/68d6081cb33ead41c718f704_Graduation-Grade-12-5843-min-p-1080.jpg";
+const BUILDING_EXTERIOR_IMG = "/images/cis-staticpage-1.png";
+const STUDENTS_WALKING_IMG = "/images/cis-web-home.png";
+const GOLF_SIMULATOR_IMG = "/images/cis-news-1.jpeg";
+const LIBRARY_MEDIA_IMG = "/images/cis-elementary.jpg";
+const GRADUATION_IMG = "/images/cis-program-4.png";
 
 type StatCardProps = {
   value: string;
@@ -62,70 +57,69 @@ export function FacilitiesSection() {
         <div className="grid gap-8 md:grid-cols-2">
           <div>
             <h2 className="font-heading text-lg font-bold uppercase tracking-wide text-tas-navy md:text-xl">
-              Explore Our Exceptional Facilities
+              Star Students, Star Teachers, Star Facilities
             </h2>
             <button
               type="button"
               className="mt-6 rounded-[10px] bg-tas-navy px-6 py-3 font-bold text-white transition-opacity hover:opacity-90"
             >
-              Learn more
+              Tìm hiểu thêm
             </button>
           </div>
           <p className="text-tas-ink">
-            The new TAS campus, completed in 2020, offers outstanding
-            facilities for students from Pre-Nursery to Grade 12. Designed to
-            support significant growth, the campus has a capacity of over
-            2,000 students, eliminating the need for major future
-            construction projects.
+            Không gian hiện đại 50.000m² tại trung tâm Phú Mỹ Hưng, hệ thống
+            phòng học tiên tiến và khu thể thao chuyên nghiệp, cùng đội ngũ
+            huấn luyện viên và giáo viên nước ngoài xuất sắc, giàu kinh
+            nghiệm và có trình độ giáo dục chuyên sâu.
           </p>
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-4 md:auto-rows-[180px]">
           <PhotoCell
             src={BUILDING_EXTERIOR_IMG}
-            alt="TAS campus building exterior"
+            alt="CIS campus building exterior with swimming pool"
             className="h-[240px] md:col-start-1 md:row-start-1 md:col-span-2 md:row-span-1 md:h-auto"
           />
 
           <StatCard
-            value="100+"
-            label="Classrooms"
+            value="50.000 m²"
+            label="Không Gian Hiện Đại"
             className="bg-tas-navy text-white md:col-start-3 md:row-start-1 md:col-span-1 md:row-span-1"
           />
 
           <PhotoCell
             src={STUDENTS_WALKING_IMG}
-            alt="Students walking on the TAS campus"
+            alt="Học sinh CIS trong phòng thí nghiệm"
             className="h-[240px] md:col-start-4 md:row-start-1 md:col-span-1 md:row-span-2 md:h-auto"
           />
 
           <PhotoCell
             src={GOLF_SIMULATOR_IMG}
-            alt="Student practicing at the golf facility"
+            alt="Học sinh CIS trong phòng khoa học"
             className="h-[240px] md:col-start-1 md:row-start-2 md:col-span-1 md:row-span-1 md:h-auto"
           />
 
           <PhotoCell
             src={LIBRARY_MEDIA_IMG}
-            alt="Library and media center at TAS"
+            alt="Học sinh Tiểu Học CIS"
             className="h-[240px] md:col-start-2 md:row-start-2 md:col-span-2 md:row-span-1 md:h-auto"
           />
 
           <StatCard
-            value="25,000 m2"
-            label="Total Campus Area"
+            value="4"
+            label="Chứng Nhận Kiểm Định Quốc Tế"
             className="bg-tas-crimson text-white md:col-start-1 md:row-start-3 md:col-span-1 md:row-span-1"
           />
 
           <PhotoCell
             src={GRADUATION_IMG}
-            alt="Graduation ceremony at TAS"
+            alt="Lễ tốt nghiệp tại CIS"
             className="h-[240px] md:col-start-2 md:row-start-3 md:col-span-2 md:row-span-1 md:h-auto"
           />
 
           <StatCard
-            value="2000+"
-            label="Student Capacity"
+            value="30+"
+            label="Quốc Tịch"
             className="bg-tas-surface text-tas-navy md:col-start-4 md:row-start-3 md:col-span-1 md:row-span-1"
           />
         </div>

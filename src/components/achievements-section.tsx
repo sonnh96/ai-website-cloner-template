@@ -2,9 +2,9 @@ import { Star } from "lucide-react";
 import { Marquee } from "@/components/marquee";
 
 const TICKER_ITEMS = [
-  "30 National Awards Won: Celebrating Excellence",
-  "Your Child's Future Starts Here",
-  "Inspiring Lifelong Learning Every Day",
+  "Trường Quốc Tế CIS - Canadian International School",
+  "Chương Trình Tú Tài Quốc Tế IB Diploma",
+  "100% Tỷ Lệ Tốt Nghiệp",
 ];
 
 export function AchievementsSection() {
@@ -16,51 +16,51 @@ export function AchievementsSection() {
           {/* Left column */}
           <div>
             <h2 className="font-heading text-tas-navy text-[32px] font-bold leading-[1.15] md:text-[36px]">
-              Celebrating Our Academic Achievements
+              Những Con Số Ấn Tượng
             </h2>
             <p className="text-tas-ink mt-5 max-w-md text-base leading-relaxed">
-              Our students consistently excel academically, achieving
-              outstanding results on standardized tests and earning
-              acceptance into prestigious colleges. We take pride in
-              fostering a culture of academic excellence.
+              Học sinh CIS được hưởng lợi từ các chương trình giảng dạy được
+              quốc tế công nhận, bao gồm cả Bằng Tú tài Quốc tế (IB Diploma),
+              giúp các em chuẩn bị cho các trường đại học hàng đầu trên thế
+              giới.
             </p>
             <button
               type="button"
               className="bg-tas-crimson mt-8 rounded-[10px] px-6 py-3 font-bold text-white transition-opacity hover:opacity-90"
             >
-              Learn more
+              Tìm hiểu thêm
             </button>
           </div>
 
           {/* Right column — asymmetric stat card grid */}
           <div className="grid grid-cols-2 gap-4">
-            {/* Card 1 — 95% College Acceptance Rate */}
+            {/* Card 1 — 100% graduation rate */}
             <div className="bg-tas-navy flex min-h-[140px] flex-col justify-end rounded-[10px] p-6 text-white">
-              <span className="text-[40px] font-bold leading-none">95%</span>
-              <span className="mt-2 text-base">College Acceptance Rate</span>
+              <span className="text-[40px] font-bold leading-none">100%</span>
+              <span className="mt-2 text-base">Tỷ Lệ Tốt Nghiệp</span>
             </div>
 
-            {/* Card 2 — 1000+ Standardized Test Scores (taller, spans full stack) */}
+            {/* Card 2 — IBDP average score vs world (taller, spans full stack) */}
             <div className="bg-tas-navy relative col-start-2 row-start-1 row-span-3 flex flex-col justify-end rounded-[10px] p-6 text-white">
               <Star className="absolute right-5 top-5 h-5 w-5 fill-white text-white" />
               <span className="text-[40px] font-bold leading-none">
-                1000+
+                33/30.2
               </span>
               <span className="mt-2 text-base">
-                Standardized Test Scores
+                Điểm Trung Bình IBDP So Với Thế Giới
               </span>
             </div>
 
-            {/* Card 3 — 15 Scholarships Awarded */}
+            {/* Card 3 — 45+ extracurricular clubs */}
             <div className="bg-tas-crimson relative flex min-h-[140px] flex-col justify-end rounded-[10px] p-6 text-white">
               <Star className="absolute right-5 top-5 h-5 w-5 fill-white text-white" />
-              <span className="text-[40px] font-bold leading-none">15</span>
-              <span className="mt-2 text-base">Scholarships Awarded</span>
+              <span className="text-[40px] font-bold leading-none">45+</span>
+              <span className="mt-2 text-base">Câu Lạc Bộ Ngoại Khóa</span>
             </div>
 
-            {/* Card 4 — small navy corner card, no numeric value */}
+            {/* Card 4 — small navy corner card, 30+ nationalities */}
             <div className="bg-tas-navy flex min-h-[80px] items-center rounded-[10px] p-6 text-white">
-              <span className="text-base font-bold">National Awards Won</span>
+              <span className="text-base font-bold">30+ Quốc Tịch</span>
             </div>
           </div>
         </div>

@@ -14,33 +14,28 @@ interface CurriculumStage {
 
 const stages: CurriculumStage[] = [
   {
-    name: "Early",
-    href: "/academics/early-years",
-    image:
-      "/images/685215c9cc7bbfe9dfcc8045_Kindergarten-B1---Vi-sao-nen-cho-con-hoc-truong-mam-non-quoc-te-ngay-tu-doi-dau-p-1600.webp",
-    pillLabel: "Primary Years Programme",
+    name: "Lớp 1 - 3",
+    href: "#",
+    image: "/images/cis-elementary.jpg",
+    pillLabel: "Tiểu Học",
   },
   {
-    name: "Elementary",
-    href: "/academics/elementary",
-    image:
-      "/images/695f1f62ea892bfc6d4fe958_530297734_1345925877542087_225820365755328426_n-p-1600.jpg",
-    pillLabel: "Primary Years Programme",
+    name: "Lớp 4 - 6",
+    href: "#",
+    image: "/images/cis-program-3.png",
+    pillLabel: "Tiểu Học",
   },
   {
-    name: "Middle",
-    href: "/academics/middle-school",
-    image:
-      "/images/6a21466cbe40efaf26428190_611241047_1484328890368451_5706714832769279403_n-p-1600.jpg",
+    name: "Lớp 7 - 10",
+    href: "#",
+    image: "/images/cis-secondary.webp",
+    pillLabel: "Trung Học",
   },
   {
-    name: "High",
-    href: "/academics/high-school",
-    // Source photo already carries a real IB Diploma Programme badge in its
-    // top-right corner — bias the crop to keep it in frame instead of
-    // fabricating a synthetic badge overlay.
-    image: "/images/6923fc1cd003b8bd6f06cefd_edit.webp",
-    imagePosition: "object-right-top",
+    name: "IBDP",
+    href: "#",
+    image: "/images/cis-program-4.png",
+    pillLabel: "Trung Học",
   },
 ];
 
@@ -49,7 +44,7 @@ export function CurriculumSection() {
     <section className="py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <h2 className="mx-auto max-w-3xl text-center text-[36px] font-bold leading-tight text-tas-crimson md:text-[40px]">
-          Comprehensive Curriculum Overview for All Educational Stages
+          Chương Trình Giáo Dục Toàn Diện Từ Lớp 1 Đến Lớp 12
         </h2>
 
         <div className="mt-10 grid grid-cols-2 gap-4 md:mt-14 md:grid-cols-4">
@@ -62,7 +57,7 @@ export function CurriculumSection() {
               <div className="relative aspect-[3/4] overflow-hidden rounded-md">
                 <Image
                   src={stage.image}
-                  alt={`${stage.name} students at TAS`}
+                  alt={`Học sinh CIS ${stage.name}`}
                   fill
                   sizes="(min-width: 768px) 25vw, 50vw"
                   className={cn(

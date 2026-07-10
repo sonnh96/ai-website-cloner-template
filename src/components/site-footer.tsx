@@ -62,6 +62,60 @@ function YoutubeIcon(props: LucideProps) {
   );
 }
 
+function LinkedinIcon(props: LucideProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect width={4} height={12} x={2} y={9} />
+      <circle cx={4} cy={4} r={2} />
+    </svg>
+  );
+}
+
+function MessengerIcon(props: LucideProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M12 2C6.48 2 2 6.14 2 11.25c0 2.9 1.46 5.49 3.76 7.19V22l3.44-1.89c.9.25 1.85.39 2.8.39 5.52 0 10-4.14 10-9.25S17.52 2 12 2z" />
+      <path d="m7 13 3.5-3.5L13 12l3.5-3.5" />
+    </svg>
+  );
+}
+
+function ZaloIcon(props: LucideProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <rect width={20} height={20} x={2} y={2} rx={6} />
+      <path d="M8 15V9h2.5a2 2 0 1 1 0 4H8" />
+      <path d="M13 9h3v6" />
+      <path d="M13 15h3" />
+    </svg>
+  );
+}
+
 /**
  * Looks for a real downloaded asset in `public/images` matching one of the
  * given patterns. Returns a public URL path, or `null` if nothing matches
@@ -81,8 +135,7 @@ function findAsset(patterns: RegExp[]): string | null {
   return null;
 }
 
-const logoWhiteSrc =
-  "/images/67e242f6b9fea32fa11da24e_38a1b495a53a5c8d3ae3db0df69da99f_Logo-White-Landscape.webp";
+const logoWhiteSrc = "/images/cis-logo.png";
 const waveSrc = findAsset([/wave/i, /union/i]);
 
 interface FooterColumn {
@@ -91,44 +144,23 @@ interface FooterColumn {
 }
 
 const footerColumns: FooterColumn[] = [
-  {
-    heading: "About",
-    links: ["About TAS", "Facilities", "School Profile"],
-  },
-  {
-    heading: "Academics",
-    links: ["Learning at TAS", "Achievements", "Curriculums", "Resources"],
-  },
-  {
-    heading: "Admission",
-    links: ["Admission", "Fees", "Policies", "Procedures", "Enrollment"],
-  },
-  {
-    heading: "Life at TAS",
-    links: [
-      "Life at TAS",
-      "Blog",
-      "Mustang Minutes Newspaper",
-      "TAS Cafeteria Menu",
-    ],
-  },
-  {
-    heading: "Staff",
-    links: ["Our Faculty", "Employment"],
-  },
+  { heading: "Về Chúng Tôi", links: ["Về Chúng Tôi"] },
+  { heading: "Học Thuật", links: ["Học Thuật"] },
+  { heading: "Tuyển Sinh", links: ["Tuyển Sinh"] },
+  { heading: "Đời Sống Học Đường", links: ["Đời Sống Học Đường"] },
+  { heading: "Khác", links: ["Thư Viện", "Tuyển Dụng"] },
 ];
 
 const socialLinks = [
   { label: "Facebook", href: "#", Icon: FacebookIcon },
-  { label: "Instagram", href: "#", Icon: InstagramIcon },
   { label: "YouTube", href: "#", Icon: YoutubeIcon },
+  { label: "Messenger", href: "#", Icon: MessengerIcon },
+  { label: "LinkedIn", href: "#", Icon: LinkedinIcon },
+  { label: "Instagram", href: "#", Icon: InstagramIcon },
+  { label: "Zalo", href: "#", Icon: ZaloIcon },
 ];
 
-const languages = [
-  { label: "EN", active: true },
-  { label: "KR", active: false },
-  { label: "VN", active: false },
-];
+const languages = [{ label: "VN", active: true }];
 
 export function SiteFooter() {
   return (
@@ -147,24 +179,23 @@ export function SiteFooter() {
         {/* Logo lockup */}
         <div className="mb-12 flex flex-col items-center gap-3 text-center">
           {logoWhiteSrc ? (
-            <Image
-              src={logoWhiteSrc}
-              alt="The American School"
-              width={72}
-              height={72}
-              className="h-16 w-auto"
-            />
+            <div className="rounded-lg bg-white/95 px-4 py-3">
+              <Image
+                src={logoWhiteSrc}
+                alt="CIS - The Canadian International School"
+                width={110}
+                height={45}
+                className="h-12 w-auto"
+              />
+            </div>
           ) : (
             <div className="flex size-16 items-center justify-center rounded-full border-2 border-white/70 font-heading text-xl font-bold tracking-wide text-white">
-              TAS
+              CIS
             </div>
           )}
           <div>
             <p className="font-heading text-lg font-bold tracking-wide text-white sm:text-xl">
-              THE AMERICAN SCHOOL
-            </p>
-            <p className="mt-1 font-body text-sm text-white/70">
-              Developing Academic Excellence and Strength of Character
+              TRƯỜNG TIỂU HỌC - TRUNG HỌC CƠ SỞ - TRUNG HỌC PHỔ THÔNG QUỐC TẾ CANADA
             </p>
           </div>
         </div>
@@ -194,39 +225,39 @@ export function SiteFooter() {
           {/* Contact Us */}
           <div>
             <h3 className="font-heading text-lg font-bold text-white">
-              Contact Us
+              Liên Hệ
             </h3>
             <ul className="mt-4 space-y-3">
               <li>
                 <a
-                  href="mailto:admissions@mytas.edu.vn"
+                  href="mailto:enquiry@cis.edu.vn"
                   className="flex items-center gap-2 font-body text-[15px] text-white/80 transition-colors hover:text-white"
                 >
                   <Mail className="size-4 shrink-0" />
-                  admissions@mytas.edu.vn
+                  enquiry@cis.edu.vn
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+842835192223"
+                  href="tel:1900255636"
                   className="flex items-center gap-2 font-body text-[15px] text-white/80 transition-colors hover:text-white"
                 >
                   <Phone className="size-4 shrink-0" />
-                  028 3519 2223
+                  1900 255 636
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+84909046223"
+                  href="tel:+842854123456"
                   className="flex items-center gap-2 font-body text-[15px] text-white/80 transition-colors hover:text-white"
                 >
                   <Smartphone className="size-4 shrink-0" />
-                  090 9046 223 (Admissions)
+                  (028) 54 123 456 (Hotline tuyển dụng)
                 </a>
               </li>
             </ul>
 
-            <div className="mt-4 flex items-center gap-4">
+            <div className="mt-4 flex flex-wrap items-center gap-4">
               {socialLinks.map(({ label, href, Icon }) => (
                 <a
                   key={label}
@@ -240,11 +271,10 @@ export function SiteFooter() {
             </div>
 
             <h4 className="mt-6 font-heading text-sm font-bold text-white">
-              Location
+              Địa Chỉ
             </h4>
             <p className="mt-2 font-body text-[15px] text-white/80">
-              06 Song Hanh Road, HCM - Long Thanh - Dau Giay Freeway, Binh
-              Trung Ward, HCMC, Vietnam
+              07 Đường Số 23, Phường Tân Mỹ, TP. Hồ Chí Minh
             </p>
           </div>
         </div>
@@ -252,7 +282,8 @@ export function SiteFooter() {
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 sm:flex-row">
           <p className="font-body text-xs text-white/60">
-            © 2024 The American School. All rights reserved.
+            CANADA INTERNATIONAL PRIMARY SCHOOL-SECONDARY SCHOOL-HIGH SCHOOL
+            JOINT STOCK COMPANY
           </p>
           <div className="flex items-center gap-3">
             {languages.map((language, index) => (

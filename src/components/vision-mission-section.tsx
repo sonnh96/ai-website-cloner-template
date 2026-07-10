@@ -25,8 +25,8 @@ export function VisionMissionSection() {
         <div ref={imageRevealRef} className="scroll-reveal">
           <div className="relative aspect-[4/3] overflow-hidden rounded-md">
             <Image
-              src="/images/67d28153761b6549fe0502cd_Day1_UNISMUN-066.webp"
-              alt="Students in blazers walking on campus"
+              src="/images/cis-principal.jpg"
+              alt="Portrait of the CIS Head of School"
               fill
               className="object-cover"
               sizes="(min-width: 768px) 50vw, 100vw"
@@ -36,40 +36,36 @@ export function VisionMissionSection() {
 
         <div ref={contentRevealRef} className="scroll-reveal flex flex-col gap-6">
           <p className="text-lg font-light text-tas-navy">
-            Empowering Students to Thrive in a Supportive Environment
+            Lời Chào Từ Cô Tổng Hiệu Trưởng
           </p>
 
           <p className="text-base leading-relaxed text-tas-ink md:text-[17px]">
-            The American School fosters the growth of the whole child in a
-            multicultural environment aligned with American educational
-            models.
+            Chào mừng quý phụ huynh, học sinh và đối tác đến với CIS!
           </p>
 
           <div>
             <h3 className="font-heading text-[28px] font-medium text-tas-navy">
-              Our Vision
+              Cam Kết Của Chúng Tôi
             </h3>
             <p className="mt-3 text-base leading-relaxed text-tas-ink md:text-[17px]">
-              To be a passionate and internationally inspired organization
-              that is dynamic and evolving, where all members are supported
-              in realizing their unique potential and all students may
-              pursue endeavors beyond the classroom, while consolidating its
-              position as an institution recognized both regionally and
-              internationally as a school of academic excellence.
+              Suốt những năm qua, CIS luôn cam kết chất lượng học thuật tiên
+              tiến, các thành tích thể thao cùng những đóng góp nghệ thuật
+              nổi bật. Bên cạnh đó, chúng tôi đề cao tinh thần công dân toàn
+              cầu bằng cách giúp học sinh trở thành những cá nhân với lòng
+              nhân ái, sự hiểu biết và tinh thần trách nhiệm.
             </p>
           </div>
 
           <div className="ml-12">
             <h3 className="font-heading text-[28px] font-medium text-tas-navy">
-              Our Mission
+              Hướng Tới Tương Lai
             </h3>
             <p className="mt-3 text-base leading-relaxed text-tas-ink md:text-[17px]">
-              The American School educates the whole child in a
-              multicultural environment aligned with educational models in
-              support of individualized pathways. We nurture individual
-              abilities to produce creative confident, and critical thinkers
-              who are self-aware, socially conscious, and prepared for an
-              ever-changing society.
+              Với những học sinh tài năng, đội ngũ giáo viên tận tâm và một
+              cộng đồng luôn ủng hộ, tôi tin rằng CIS sẽ trở thành một trong
+              những trường quốc tế hàng đầu. Cùng nhau, chúng ta sẽ biến năm
+              học này trở thành năm của tinh thần học tập, phát triển để
+              vươn tới thành công!
             </p>
           </div>
         </div>

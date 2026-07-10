@@ -28,9 +28,9 @@ export default function Home() {
 
       <CTABanner
         variant="crimson"
-        heading="Ready to Join Our Community?"
-        description="Discover how easy it is to become part of The American School family! Learn more about our transparent fee structure and streamlined admission process."
-        buttonLabel="View Fees and Apply Now"
+        heading="Sẵn Sàng Gia Nhập Cộng Đồng CIS?"
+        description="Khám phá hành trình học tập tại CIS! Tìm hiểu thêm về chương trình học, học phí minh bạch và quy trình tuyển sinh của trường."
+        buttonLabel="Đăng Ký Tư Vấn Ngay"
       />
 
       <CurriculumSection />
@@ -41,9 +41,9 @@ export default function Home() {
 
       <CTABanner
         variant="navy"
-        heading="Start Your Journey with Us"
-        description="At The American School, we believe in providing a nurturing and supportive environment where every student can thrive."
-        buttonLabel="Apply Now"
+        heading="Bắt Đầu Hành Trình Cùng CIS"
+        description="Tại CIS, chúng tôi tin rằng mỗi học sinh xứng đáng có một môi trường nuôi dưỡng và hỗ trợ để phát triển toàn diện."
+        buttonLabel="Đăng Ký Ngay"
       />
 
       <ExploreTasLifeSection />

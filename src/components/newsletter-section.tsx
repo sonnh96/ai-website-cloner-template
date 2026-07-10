@@ -5,16 +5,18 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface NewsletterFormState {
-  name: string;
-  email: string;
-  phone: string;
+  parentName: string;
+  studentAge: string;
+  program: string;
 }
 
 const INITIAL_STATE: NewsletterFormState = {
-  name: "",
-  email: "",
-  phone: "",
+  parentName: "",
+  studentAge: "",
+  program: "",
 };
+
+const PROGRAMS = ["Lớp 1 - 3", "Lớp 4 - 6", "Lớp 7 - 10", "IBDP"];
 
 const inputClassName = cn(
   "w-full rounded-[10px] border-2 border-white/70 bg-white/10 px-4 py-3",
@@ -27,7 +29,9 @@ export function NewsletterSection() {
   const [form, setForm] = useState<NewsletterFormState>(INITIAL_STATE);
 
   function handleChange(field: keyof NewsletterFormState) {
-    return (event: React.ChangeEvent<HTMLInputElement>) => {
+    return (
+      event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+    ) => {
       setForm((prev) => ({ ...prev, [field]: event.target.value }));
     };
   }
@@ -35,7 +39,7 @@ export function NewsletterSection() {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     // No real backend for this clone — mock submit only.
-    console.log("Newsletter tour request submitted:", form);
+    console.log("CIS tư vấn request submitted:", form);
     setForm(INITIAL_STATE);
   }
 
@@ -44,11 +48,10 @@ export function NewsletterSection() {
       <div className="flex items-center bg-tas-crimson p-12 md:p-16">
         <div className="w-full max-w-xl">
           <h2 className="font-heading text-[36px] font-bold leading-tight text-white">
-            Book a school tour with us!
+            Đăng Ký Tư Vấn Cùng CIS
           </h2>
           <p className="mt-4 font-body text-base text-white/90">
-            Be the first to know about exciting school updates, events, and
-            achievements.
+            Hãy để lại thông tin để nhận những cập nhật mới nhất về CIS.
           </p>
 
           <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-5">
@@ -57,56 +60,59 @@ export function NewsletterSection() {
                 htmlFor="newsletter-name"
                 className="font-body text-sm font-semibold text-white"
               >
-                Your Name
+                Họ tên của phụ huynh
               </label>
               <input
                 id="newsletter-name"
-                name="name"
+                name="parentName"
                 type="text"
                 required
-                placeholder="Enter Your Name Here"
-                value={form.name}
-                onChange={handleChange("name")}
+                placeholder="Nhập ở đây..."
+                value={form.parentName}
+                onChange={handleChange("parentName")}
                 className={inputClassName}
               />
             </div>
 
             <div className="flex flex-col gap-2">
               <label
-                htmlFor="newsletter-email"
+                htmlFor="newsletter-age"
                 className="font-body text-sm font-semibold text-white"
               >
-                Email
+                Tuổi của học sinh
               </label>
               <input
-                id="newsletter-email"
-                name="email"
-                type="email"
-                required
-                placeholder="youremail@gmail.com"
-                value={form.email}
-                onChange={handleChange("email")}
+                id="newsletter-age"
+                name="studentAge"
+                type="text"
+                placeholder="Nhập ở đây"
+                value={form.studentAge}
+                onChange={handleChange("studentAge")}
                 className={inputClassName}
               />
             </div>
 
             <div className="flex flex-col gap-2">
               <label
-                htmlFor="newsletter-phone"
+                htmlFor="newsletter-program"
                 className="font-body text-sm font-semibold text-white"
               >
-                Phone number
+                Chọn chương trình
               </label>
-              <input
-                id="newsletter-phone"
-                name="phone"
-                type="tel"
-                required
-                placeholder="Enter Phone Number Here"
-                value={form.phone}
-                onChange={handleChange("phone")}
-                className={inputClassName}
-              />
+              <select
+                id="newsletter-program"
+                name="program"
+                value={form.program}
+                onChange={handleChange("program")}
+                className={cn(inputClassName, "text-white [&>option]:text-tas-ink")}
+              >
+                <option value="">-- Chọn chương trình --</option>
+                {PROGRAMS.map((program) => (
+                  <option key={program} value={program}>
+                    {program}
+                  </option>
+                ))}
+              </select>
             </div>
 
             <button
@@ -117,7 +123,7 @@ export function NewsletterSection() {
                 "transition-colors duration-200 hover:bg-white hover:text-tas-crimson",
               )}
             >
-              Book a tour
+              Gửi
             </button>
           </form>
         </div>
@@ -125,8 +131,8 @@ export function NewsletterSection() {
 
       <div className="relative hidden min-h-[420px] md:block">
         <Image
-          src="/images/newsletter-campus-aerial.avif"
-          alt="Aerial view of The American School campus"
+          src="/images/cis-hero-banner.jpg"
+          alt="Toàn cảnh khuôn viên trường Quốc Tế CIS"
           fill
           sizes="(min-width: 768px) 50vw, 100vw"
           className="h-full w-full object-cover"

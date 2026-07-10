@@ -12,21 +12,16 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { label: "About", href: "#" },
-  { label: "Academics", href: "#" },
-  { label: "Admission", href: "#" },
-  { label: "Our Faculty", href: "#" },
-  { label: "TAS Life", href: "#" },
+  { label: "Về Chúng Tôi", href: "#" },
+  { label: "Học Thuật", href: "#" },
+  { label: "Tuyển Sinh", href: "#" },
+  { label: "Đời Sống Học Đường", href: "#" },
+  { label: "Liên Hệ", href: "#" },
 ];
 
-const LANGUAGES = [
-  { code: "EN", active: true },
-  { code: "KR", active: false },
-  { code: "VN", active: false },
-];
+const LANGUAGES = [{ code: "VN", active: true }];
 
-const LOGO_SRC =
-  "/images/67e242f6b9fea32fa11da24e_38a1b495a53a5c8d3ae3db0df69da99f_Logo-White-Landscape.webp";
+const LOGO_SRC = "/images/cis-logo.png";
 
 export function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -37,14 +32,18 @@ export function SiteHeader() {
     <header className="absolute inset-x-0 top-0 z-20">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-10">
         {/* Logo */}
-        <Link href="#" className="shrink-0" aria-label="The American School home">
+        <Link
+          href="#"
+          className="shrink-0 rounded-lg bg-white/95 px-3 py-2 shadow-sm"
+          aria-label="CIS - The Canadian International School home"
+        >
           <Image
             src={LOGO_SRC}
-            alt="The American School - Developing Academic Excellence and Strength of Character"
-            width={283}
-            height={48}
+            alt="CIS - The Canadian International School, a member of EQuest Education"
+            width={220}
+            height={90}
             priority
-            className="h-10 w-auto lg:h-12"
+            className="h-9 w-auto lg:h-11"
           />
         </Link>
 
@@ -96,7 +95,7 @@ export function SiteHeader() {
             href="#"
             className="rounded-[10px] bg-tas-crimson px-6 py-3 font-sans text-[15px] font-bold text-white transition-colors hover:bg-tas-crimson-dark"
           >
-            Enroll Now
+            Tư Vấn
           </Link>
           <div className="flex items-center gap-1.5 font-sans text-sm">
             {LANGUAGES.map((lang) => (
@@ -137,13 +136,17 @@ export function SiteHeader() {
         )}
       >
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-6">
-          <Link href="#" className="shrink-0" onClick={() => setMobileMenuOpen(false)}>
+          <Link
+            href="#"
+            className="shrink-0 rounded-lg bg-white/95 px-3 py-2"
+            onClick={() => setMobileMenuOpen(false)}
+          >
             <Image
               src={LOGO_SRC}
-              alt="The American School - Developing Academic Excellence and Strength of Character"
-              width={283}
-              height={48}
-              className="h-10 w-auto"
+              alt="CIS - The Canadian International School, a member of EQuest Education"
+              width={220}
+              height={90}
+              className="h-9 w-auto"
             />
           </Link>
           <button

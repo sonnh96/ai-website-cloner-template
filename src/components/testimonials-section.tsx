@@ -16,28 +16,27 @@ interface Testimonial {
 const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      "I joined TAS in my junior year, and the supportive teachers and welcoming community made a lasting impact. Through MUN with Mr. David, I gained confidence, leadership, and teamwork skills. What I value most is the strong sense of community where I always felt seen and supported.",
-    name: "Khanh Nguyen Jennifer",
-    cohort: "Class of 2025",
-    avatar: "/images/68f98e0a1e0e678a04a36e03_study-abroad-pathway-at-TAS-p-800.jpg",
-    avatarPosition: "68% 20%",
+      "CIS không chỉ là một trường học, đó là nơi con tôi yêu thích. Nhà trường tạo ra một môi trường an toàn và hỗ trợ, nơi trẻ em biết rằng chúng có thể tìm kiếm sự giúp đỡ khi cần thiết.",
+    name: "Stefan K.",
+    cohort: "Phụ huynh CIS",
+    avatar: "/images/cis-elementary.jpg",
+    avatarPosition: "50% 20%",
   },
   {
     quote:
-      "I've studied at TAS for 7 years, and the teachers, especially Mr. Reede, Mr. Taka, and Mr. Andrew, have supported me far beyond academics. When choosing a university, I relied on alumni feedback for real insights. I committed to ASU and have no regrets!",
-    name: "Samuel Nguyen",
-    cohort: "Class of 2025",
-    avatar: "/images/6923fc1cd003b8bd6f06cefd_edit.webp",
-    avatarPosition: "55% 20%",
+      "CIS như ngôi nhà thứ hai của con tôi, bé rất thích đi học và mỗi ngày không ngừng kể cho tôi nghe những câu chuyện thầy cô trường lớp và bạn bè. Con tôi mỗi ngày học tiến bộ hơn rõ rệt, bé học cách đối mặt với thách thức, tư duy logic và sáng tạo ứng dụng kiến thức được học. Niềm hạnh phúc của con khi đến trường CIS làm tôi vững tin về lựa chọn đúng đắn của mình.",
+    name: "Emily",
+    cohort: "Phụ huynh CIS",
+    avatar: "/images/cis-secondary.webp",
+    avatarPosition: "50% 15%",
   },
   {
     quote:
-      "TAS transformed me from a shy, insecure student into someone confident in expressing myself through both English and art, thanks to the support of inspiring teachers and a community that always believed in me.",
-    name: "Yeji Lee",
-    cohort: "Class of 2025",
-    avatar:
-      "/images/67ea14dbefc741b78f28889d_474800444_1163867852414558_1287744250052738853_n-p-800.jpg",
-    avatarPosition: "58% 30%",
+      "Ngoài việc chú trọng trau dồi kiến thức, CIS còn khuyến khích sự sáng tạo khai phá tiềm năng bản thân. Con tôi trở nên tự tin hơn với nền tảng kiến thức vững chắc. CIS thực sự là môi trường giáo dục tốt cho thế hệ công dân toàn cầu tương lai.",
+    name: "John",
+    cohort: "Phụ huynh CIS",
+    avatar: "/images/cis-program-4.png",
+    avatarPosition: "50% 15%",
   },
 ];
 

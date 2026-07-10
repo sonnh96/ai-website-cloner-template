@@ -7,9 +7,15 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
-  --font-heading: var(--font-sans);
+  --font-heading: var(--font-gotham), var(--font-sans);
+  --color-cis-red: var(--cis-red);
+  --color-cis-red-dark: var(--cis-red-dark);
+  --color-cis-navy: var(--cis-navy);
+  --color-cis-gold: var(--cis-gold);
+  --color-cis-gold-foreground: var(--cis-gold-foreground);
+  --color-surface-tint: var(--surface-tint);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -50,23 +56,32 @@
 
 :root {
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --foreground: #212529;
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: #212529;
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --popover-foreground: #212529;
+  --primary: #8a0304;
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --secondary: #282664;
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(97.5% 0.006 25);
+  --muted-foreground: oklch(45% 0.018 25);
+  --accent: oklch(96% 0.008 25);
+  --accent-foreground: #8a0304;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: oklch(90% 0.01 25);
+  --input: oklch(90% 0.01 25);
+  --ring: #8a0304;
+  --cis-red: #8a0304;
+  --cis-red-dark: #6c0203;
+  --cis-navy: #282664;
+  --cis-gold: oklch(76% 0.125 82);
+  --cis-gold-foreground: oklch(28% 0.045 82);
+  --surface-tint: oklch(96.5% 0.012 25);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -126,5 +141,117 @@
   }
   html {
     @apply font-sans;
+    scroll-behavior: smooth;
+  }
+}
+
+/* --- Motion: entrance + scroll reveals ------------------------------ */
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drift-down {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Above-the-fold entrance: plays once on load, not scroll-gated, so
+   content is never hidden waiting on an observer or a paused timeline. */
+.enter-rise {
+  animation: rise-in 0.7s var(--ease-out-expo) both;
+  animation-delay: calc(var(--i, 0) * 110ms + 80ms);
+}
+
+/* Gentle scroll-hint float: ease-in-out, no overshoot (not a bounce curve). */
+.drift-down {
+  animation: drift-down 1.8s ease-in-out infinite;
+  animation-delay: 600ms;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Crossfade for content swapped via key remount (tabs, carousels). */
+.fade-swap {
+  animation: fade-in 0.4s var(--ease-out-quart) both;
+}
+
+@keyframes dropdown-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Interactive menu/dropdown open transition (not scroll-gated; fires on mount). */
+.dropdown-enter {
+  animation: dropdown-in 0.18s var(--ease-out-quart) both;
+  transform-origin: top center;
+}
+
+/* Below-the-fold reveals: progressive enhancement only. Without
+   animation-timeline support the rule inside @supports never applies,
+   so elements keep their normal (fully visible) box by default. */
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: rise-in 0.6s var(--ease-out-quart) both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+  .reveal-scale {
+    animation: scale-in 0.5s var(--ease-out-quart) both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+  .reveal-stagger > * {
+    animation: rise-in 0.55s var(--ease-out-quart) both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+    animation-delay: calc(var(--i, 0) * 70ms);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

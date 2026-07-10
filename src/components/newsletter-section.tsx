@@ -21,8 +21,8 @@ const PROGRAMS = ["Lớp 1 - 3", "Lớp 4 - 6", "Lớp 7 - 10", "IBDP"];
 const inputClassName = cn(
   "w-full rounded-[10px] border-2 border-white/70 bg-white/10 px-4 py-3",
   "font-body text-base text-white placeholder:text-white/60",
-  "outline-none transition-colors duration-200",
-  "focus:border-white focus:bg-white/15",
+  "outline-none transition-[border-color,background-color,box-shadow] duration-200",
+  "focus:border-white focus:bg-white/15 focus:shadow-[0_0_0_4px_rgba(255,255,255,0.18)]",
 );
 
 export function NewsletterSection() {
@@ -118,9 +118,9 @@ export function NewsletterSection() {
             <button
               type="submit"
               className={cn(
-                "mt-2 w-fit rounded-[10px] border-2 border-white px-8 py-3",
+                "btn-tactile mt-2 w-fit rounded-[10px] border-2 border-white px-8 py-3",
                 "font-body font-bold text-white",
-                "transition-colors duration-200 hover:bg-white hover:text-tas-crimson",
+                "hover:bg-white hover:text-tas-crimson",
               )}
             >
               Gửi

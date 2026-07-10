@@ -1,5 +1,8 @@
+"use client";
+
 import { Star } from "lucide-react";
 import { Marquee } from "@/components/marquee";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const TICKER_ITEMS = [
   "Trường Quốc Tế CIS - Canadian International School",
@@ -8,6 +11,8 @@ const TICKER_ITEMS = [
 ];
 
 export function AchievementsSection() {
+  const gridRef = useScrollReveal<HTMLDivElement>();
+
   return (
     <section className="w-full">
       {/* Part A — Achievements content */}
@@ -26,22 +31,22 @@ export function AchievementsSection() {
             </p>
             <button
               type="button"
-              className="bg-tas-crimson mt-8 rounded-[10px] px-6 py-3 font-bold text-white transition-opacity hover:opacity-90"
+              className="btn-tactile bg-tas-crimson mt-8 rounded-[10px] px-6 py-3 font-bold text-white hover:opacity-90"
             >
               Tìm hiểu thêm
             </button>
           </div>
 
           {/* Right column — asymmetric stat card grid */}
-          <div className="grid grid-cols-2 gap-4">
+          <div ref={gridRef} className="stagger-reveal grid grid-cols-2 gap-4">
             {/* Card 1 — 100% graduation rate */}
-            <div className="bg-tas-navy flex min-h-[140px] flex-col justify-end rounded-[10px] p-6 text-white">
+            <div className="stagger-item bg-tas-navy flex min-h-[140px] flex-col justify-end rounded-[10px] p-6 text-white">
               <span className="text-[40px] font-bold leading-none">100%</span>
               <span className="mt-2 text-base">Tỷ Lệ Tốt Nghiệp</span>
             </div>
 
             {/* Card 2 — IBDP average score vs world (taller, spans full stack) */}
-            <div className="bg-tas-navy relative col-start-2 row-start-1 row-span-3 flex flex-col justify-end rounded-[10px] p-6 text-white">
+            <div className="stagger-item bg-tas-navy relative col-start-2 row-start-1 row-span-3 flex flex-col justify-end rounded-[10px] p-6 text-white">
               <Star className="absolute right-5 top-5 h-5 w-5 fill-white text-white" />
               <span className="text-[40px] font-bold leading-none">
                 33/30.2
@@ -52,14 +57,14 @@ export function AchievementsSection() {
             </div>
 
             {/* Card 3 — 45+ extracurricular clubs */}
-            <div className="bg-tas-crimson relative flex min-h-[140px] flex-col justify-end rounded-[10px] p-6 text-white">
+            <div className="stagger-item bg-tas-crimson relative flex min-h-[140px] flex-col justify-end rounded-[10px] p-6 text-white">
               <Star className="absolute right-5 top-5 h-5 w-5 fill-white text-white" />
               <span className="text-[40px] font-bold leading-none">45+</span>
               <span className="mt-2 text-base">Câu Lạc Bộ Ngoại Khóa</span>
             </div>
 
             {/* Card 4 — small navy corner card, 30+ nationalities */}
-            <div className="bg-tas-navy flex min-h-[80px] items-center rounded-[10px] p-6 text-white">
+            <div className="stagger-item bg-tas-navy flex min-h-[80px] items-center rounded-[10px] p-6 text-white">
               <span className="text-base font-bold">30+ Quốc Tịch</span>
             </div>
           </div>

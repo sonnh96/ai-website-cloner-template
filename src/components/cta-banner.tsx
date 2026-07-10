@@ -50,17 +50,20 @@ export function CTABanner({
             className="absolute inset-0 -z-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,255,255,0.18),_transparent_60%),radial-gradient(ellipse_at_bottom_left,_rgba(255,255,255,0.12),_transparent_55%)]"
           />
         )
+      ) : MUSTANG_WATERMARK_SRC ? (
+        <Image
+          src={MUSTANG_WATERMARK_SRC}
+          alt=""
+          width={640}
+          height={640}
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-16 top-1/2 -z-0 h-auto w-[28rem] -translate-y-1/2 select-none opacity-10 object-contain"
+        />
       ) : (
-        MUSTANG_WATERMARK_SRC && (
-          <Image
-            src={MUSTANG_WATERMARK_SRC}
-            alt=""
-            width={640}
-            height={640}
-            aria-hidden="true"
-            className="pointer-events-none absolute -right-16 top-1/2 -z-0 h-auto w-[28rem] -translate-y-1/2 select-none opacity-10 object-contain"
-          />
-        )
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(223,33,77,0.25),_transparent_55%),radial-gradient(ellipse_at_top_right,_rgba(255,255,255,0.08),_transparent_60%)]"
+        />
       )}
 
       <div
@@ -83,7 +86,7 @@ export function CTABanner({
         <Link
           href={buttonHref}
           className={cn(
-            "mt-8 inline-flex items-center justify-center rounded-[10px] border-2 border-white px-6 py-3 font-bold text-white transition-colors",
+            "btn-tactile mt-8 inline-flex items-center justify-center rounded-[10px] border-2 border-white px-6 py-3 font-bold text-white",
             isCrimson
               ? "hover:bg-white hover:text-tas-crimson"
               : "hover:bg-white hover:text-tas-navy"

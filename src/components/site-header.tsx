@@ -75,16 +75,21 @@ export function SiteHeader() {
                 />
               </button>
 
-              {openDesktopDropdown === item.label && (
-                <div className="absolute top-full left-0 z-30 mt-3 min-w-[180px] rounded-lg bg-white py-2 shadow-lg">
-                  <Link
-                    href="#"
-                    className="block px-4 py-2 font-sans text-sm font-bold text-tas-ink hover:bg-tas-surface"
-                  >
-                    {item.label}
-                  </Link>
-                </div>
-              )}
+              <div
+                className={cn(
+                  "absolute top-full left-0 z-30 mt-3 min-w-[180px] rounded-lg bg-white py-2 shadow-lg transition-all duration-200 [transition-timing-function:var(--ease-out-quart)]",
+                  openDesktopDropdown === item.label
+                    ? "pointer-events-auto translate-y-0 opacity-100"
+                    : "pointer-events-none -translate-y-1 opacity-0"
+                )}
+              >
+                <Link
+                  href="#"
+                  className="block px-4 py-2 font-sans text-sm font-bold text-tas-ink transition-colors hover:bg-tas-surface"
+                >
+                  {item.label}
+                </Link>
+              </div>
             </div>
           ))}
         </nav>
@@ -93,7 +98,7 @@ export function SiteHeader() {
         <div className="hidden items-center gap-6 lg:flex">
           <Link
             href="#"
-            className="rounded-[10px] bg-tas-crimson px-6 py-3 font-sans text-[15px] font-bold text-white transition-colors hover:bg-tas-crimson-dark"
+            className="btn-tactile rounded-[10px] bg-tas-crimson px-6 py-3 font-sans text-[15px] font-bold text-white hover:bg-tas-crimson-dark"
           >
             Tư Vấn
           </Link>
@@ -196,16 +201,23 @@ export function SiteHeader() {
                     )}
                   />
                 </button>
-                {openAccordion === item.label && (
-                  <div className="pb-4">
-                    <Link
-                      href="#"
-                      className="block py-2 font-sans text-base font-bold text-white/80"
-                    >
-                      {item.label}
-                    </Link>
+                <div
+                  className={cn(
+                    "grid transition-[grid-template-rows] duration-300 [transition-timing-function:var(--ease-out-quart)]",
+                    openAccordion === item.label ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                  )}
+                >
+                  <div className="overflow-hidden">
+                    <div className="pb-4">
+                      <Link
+                        href="#"
+                        className="block py-2 font-sans text-base font-bold text-white/80"
+                      >
+                        {item.label}
+                      </Link>
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             ))}
           </div>
@@ -213,10 +225,10 @@ export function SiteHeader() {
           <div className="mt-auto flex flex-col items-center gap-6 py-8">
             <Link
               href="#"
-              className="w-full rounded-[10px] bg-tas-crimson px-6 py-3 text-center font-sans text-[15px] font-bold text-white transition-colors hover:bg-tas-crimson-dark"
+              className="btn-tactile w-full rounded-[10px] bg-tas-crimson px-6 py-3 text-center font-sans text-[15px] font-bold text-white hover:bg-tas-crimson-dark"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Enroll Now
+              Tư Vấn
             </Link>
           </div>
         </div>

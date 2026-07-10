@@ -42,35 +42,37 @@ const SEO_BLOG_POSTS: SeoBlogPost[] = [
 
 export function SeoBlogCarouselSection() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-      <Carousel
-        arrowVariant="square"
-        arrowClassName="justify-end"
-        slides={SEO_BLOG_POSTS.map((post) => (
-          <article
-            key={post.title}
-            className="flex flex-col gap-6 sm:flex-row sm:items-start"
-          >
-            <div className="relative aspect-[4/3] w-40 shrink-0 overflow-hidden rounded-md bg-tas-surface p-4">
-              <Image
-                src={post.image}
-                alt={post.title}
-                fill
-                className="object-contain p-4"
-                sizes="160px"
-              />
-            </div>
-            <div className="flex flex-col gap-3">
-              <h3 className="text-lg font-bold leading-snug text-tas-navy">
-                {post.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-gray-600">
-                {post.excerpt}
-              </p>
-            </div>
-          </article>
-        ))}
-      />
+    <section className="w-full bg-tas-tint py-16">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <Carousel
+          arrowVariant="square"
+          arrowClassName="justify-end"
+          slides={SEO_BLOG_POSTS.map((post) => (
+            <article
+              key={post.title}
+              className="group flex flex-col gap-6 sm:flex-row sm:items-start"
+            >
+              <div className="relative aspect-[4/3] w-40 shrink-0 overflow-hidden rounded-md border border-tas-crimson/15 bg-white p-4 transition-shadow duration-300 group-hover:shadow-md">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  className="object-contain p-4"
+                  sizes="160px"
+                />
+              </div>
+              <div className="flex flex-col gap-3">
+                <h3 className="text-lg font-bold leading-snug text-tas-navy">
+                  {post.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-gray-600">
+                  {post.excerpt}
+                </p>
+              </div>
+            </article>
+          ))}
+        />
+      </div>
     </section>
   );
 }

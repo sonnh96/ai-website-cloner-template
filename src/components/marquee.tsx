@@ -15,7 +15,7 @@ export function Marquee({
   className,
 }: MarqueeProps) {
   return (
-    <div className={cn("overflow-hidden whitespace-nowrap", className)}>
+    <div className={cn("marquee-row overflow-hidden whitespace-nowrap", className)}>
       <div
         className={cn(
           "flex w-max items-center",

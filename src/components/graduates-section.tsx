@@ -13,8 +13,8 @@ function UniversityWordmark({ name }: { name: string }) {
   return (
     <span
       className={cn(
-        "flex h-10 items-center whitespace-nowrap font-heading text-lg font-bold uppercase tracking-wide text-tas-navy",
-        "opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0",
+        "flex h-10 items-center whitespace-nowrap rounded-full border border-tas-navy/15 bg-white px-5 font-heading text-lg font-bold uppercase tracking-wide text-tas-navy",
+        "transition-colors duration-300 hover:border-tas-crimson/40 hover:bg-tas-tint",
         "md:h-12 md:text-xl"
       )}
     >
@@ -37,7 +37,7 @@ export function GraduatesSection() {
         </p>
         <button
           type="button"
-          className="mt-8 rounded-[10px] bg-tas-crimson px-6 py-3 font-bold text-white transition hover:brightness-110"
+          className="btn-tactile mt-8 rounded-[10px] bg-tas-crimson px-6 py-3 font-bold text-white hover:brightness-110"
         >
           Tìm hiểu thêm
         </button>

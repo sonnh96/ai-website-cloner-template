@@ -58,13 +58,13 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-white py-20 sm:py-24">
+    <section className="relative overflow-hidden bg-tas-tint py-20 sm:py-24">
       <button
         type="button"
         aria-label="Previous testimonial"
         onClick={() => go(-1)}
         className={cn(
-          "border-tas-navy text-tas-navy hover:bg-tas-navy absolute top-1/2 left-4 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border transition-colors hover:text-white"
+          "btn-tactile border-tas-navy text-tas-navy hover:bg-tas-navy absolute top-1/2 left-4 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border hover:text-white"
         )}
       >
         <ChevronLeft className="size-4" />
@@ -74,7 +74,7 @@ export function TestimonialsSection() {
         aria-label="Next testimonial"
         onClick={() => go(1)}
         className={cn(
-          "border-tas-navy text-tas-navy hover:bg-tas-navy absolute top-1/2 right-4 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border transition-colors hover:text-white"
+          "btn-tactile border-tas-navy text-tas-navy hover:bg-tas-navy absolute top-1/2 right-4 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border hover:text-white"
         )}
       >
         <ChevronRight className="size-4" />
@@ -83,7 +83,7 @@ export function TestimonialsSection() {
       <div className="mx-auto max-w-5xl px-16 sm:px-24">
         <div className="overflow-hidden">
           <div
-            className="flex transition-transform duration-500 ease-in-out"
+            className="flex transition-transform duration-500 [transition-timing-function:var(--ease-out-quart)]"
             style={{ transform: `translateX(-${index * 100}%)` }}
           >
             {TESTIMONIALS.map((testimonial) => (
@@ -93,7 +93,7 @@ export function TestimonialsSection() {
                     &ldquo;{testimonial.quote}&rdquo;
                   </blockquote>
                   <figcaption className="mt-8 flex flex-col items-center gap-3">
-                    <div className="relative size-14 overflow-hidden rounded-full">
+                    <div className="relative size-14 overflow-hidden rounded-full ring-2 ring-tas-crimson/40 ring-offset-2 ring-offset-tas-tint">
                       <Image
                         src={testimonial.avatar}
                         alt={testimonial.name}

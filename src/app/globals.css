@@ -17,6 +17,7 @@
   --color-tas-navy-dark: #1c3a58;
   --color-tas-ink: #122b50;
   --color-tas-surface: #f5f5f5;
+  --color-tas-tint: #fbf3f5;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -137,6 +138,11 @@
   }
 }
 
+:root {
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 @keyframes marquee-left {
   from {
     transform: translateX(0);
@@ -163,15 +169,118 @@
   animation: marquee-right 40s linear infinite;
 }
 
+.marquee-row:hover .animate-marquee-left,
+.marquee-row:hover .animate-marquee-right {
+  animation-play-state: paused;
+}
+
 .scroll-reveal {
   opacity: 0;
   transform: translateY(20px);
   transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
+    opacity 0.6s var(--ease-out-quart),
+    transform 0.6s var(--ease-out-quart);
 }
 
 .scroll-reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Stagger-reveal: apply `stagger-reveal` to a grid container (paired with
+   useScrollReveal so `.is-visible` toggles on scroll-into-view), and
+   `stagger-item` to each direct child. Children fade/rise in with a short
+   cascading delay instead of popping in as one flat block. */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.5s var(--ease-out-quart),
+    transform 0.5s var(--ease-out-quart);
+}
+
+.stagger-reveal.is-visible .stagger-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-reveal.is-visible .stagger-item:nth-child(1) {
+  transition-delay: 0ms;
+}
+.stagger-reveal.is-visible .stagger-item:nth-child(2) {
+  transition-delay: 80ms;
+}
+.stagger-reveal.is-visible .stagger-item:nth-child(3) {
+  transition-delay: 160ms;
+}
+.stagger-reveal.is-visible .stagger-item:nth-child(4) {
+  transition-delay: 240ms;
+}
+.stagger-reveal.is-visible .stagger-item:nth-child(5) {
+  transition-delay: 320ms;
+}
+.stagger-reveal.is-visible .stagger-item:nth-child(6) {
+  transition-delay: 400ms;
+}
+.stagger-reveal.is-visible .stagger-item:nth-child(7) {
+  transition-delay: 480ms;
+}
+.stagger-reveal.is-visible .stagger-item:nth-child(8) {
+  transition-delay: 560ms;
+}
+
+/* Hero entrance — the one signature page-load moment. Runs once on mount,
+   not scroll-triggered (it's above the fold). */
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-rise {
+  animation: hero-rise 0.8s var(--ease-out-expo) both;
+}
+
+/* Tactile button feedback: subtle lift on hover, settle on press. */
+.btn-tactile {
+  transition:
+    transform 0.2s var(--ease-out-quart),
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-tactile:hover {
+  transform: scale(1.03);
+}
+
+.btn-tactile:active {
+  transform: scale(0.97);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .scroll-reveal,
+  .stagger-item {
+    opacity: 1;
+    transform: none;
+  }
+
+  .btn-tactile:hover,
+  .btn-tactile:active {
+    transform: none;
+  }
 }

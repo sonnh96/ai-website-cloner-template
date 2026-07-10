@@ -28,7 +28,7 @@ export function Carousel({
     <div className={cn("relative", className)}>
       <div className="overflow-hidden">
         <div
-          className="flex transition-transform duration-500 ease-in-out"
+          className="flex transition-transform duration-500 [transition-timing-function:var(--ease-out-quart)]"
           style={{ transform: `translateX(-${index * 100}%)` }}
         >
           {slides.map((slide, i) => (
@@ -44,7 +44,7 @@ export function Carousel({
           aria-label="Previous slide"
           onClick={() => go(-1)}
           className={cn(
-            "flex size-10 items-center justify-center border border-tas-navy text-tas-navy transition-colors hover:bg-tas-navy hover:text-white",
+            "btn-tactile flex size-10 items-center justify-center border border-tas-navy text-tas-navy hover:bg-tas-navy hover:text-white",
             arrowVariant === "circle" ? "rounded-full" : "rounded-md"
           )}
         >
@@ -55,7 +55,7 @@ export function Carousel({
           aria-label="Next slide"
           onClick={() => go(1)}
           className={cn(
-            "flex size-10 items-center justify-center border border-tas-navy text-tas-navy transition-colors hover:bg-tas-navy hover:text-white",
+            "btn-tactile flex size-10 items-center justify-center border border-tas-navy text-tas-navy hover:bg-tas-navy hover:text-white",
             arrowVariant === "circle" ? "rounded-full" : "rounded-md"
           )}
         >

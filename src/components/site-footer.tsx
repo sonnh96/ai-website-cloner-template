@@ -212,7 +212,7 @@ export function SiteFooter() {
                   <li key={link}>
                     <Link
                       href="#"
-                      className="font-body text-[15px] text-white/80 transition-colors hover:text-white hover:underline"
+                      className="font-body text-[15px] text-white/80 transition-colors hover:text-[#ff9db3] hover:underline"
                     >
                       {link}
                     </Link>
@@ -231,7 +231,7 @@ export function SiteFooter() {
               <li>
                 <a
                   href="mailto:enquiry@cis.edu.vn"
-                  className="flex items-center gap-2 font-body text-[15px] text-white/80 transition-colors hover:text-white"
+                  className="flex items-center gap-2 font-body text-[15px] text-white/80 transition-colors hover:text-[#ff9db3]"
                 >
                   <Mail className="size-4 shrink-0" />
                   enquiry@cis.edu.vn
@@ -240,7 +240,7 @@ export function SiteFooter() {
               <li>
                 <a
                   href="tel:1900255636"
-                  className="flex items-center gap-2 font-body text-[15px] text-white/80 transition-colors hover:text-white"
+                  className="flex items-center gap-2 font-body text-[15px] text-white/80 transition-colors hover:text-[#ff9db3]"
                 >
                   <Phone className="size-4 shrink-0" />
                   1900 255 636
@@ -249,7 +249,7 @@ export function SiteFooter() {
               <li>
                 <a
                   href="tel:+842854123456"
-                  className="flex items-center gap-2 font-body text-[15px] text-white/80 transition-colors hover:text-white"
+                  className="flex items-center gap-2 font-body text-[15px] text-white/80 transition-colors hover:text-[#ff9db3]"
                 >
                   <Smartphone className="size-4 shrink-0" />
                   (028) 54 123 456 (Hotline tuyển dụng)
@@ -263,7 +263,7 @@ export function SiteFooter() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="text-white transition-opacity hover:opacity-70"
+                  className="btn-tactile text-white hover:text-[#ff9db3]"
                 >
                   <Icon className="size-5" />
                 </a>

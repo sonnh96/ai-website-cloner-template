@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const BUILDING_EXTERIOR_IMG = "/images/cis-staticpage-1.png";
 const STUDENTS_WALKING_IMG = "/images/cis-web-home.png";
@@ -17,7 +20,7 @@ function StatCard({ value, label, className }: StatCardProps) {
   return (
     <div
       className={cn(
-        "flex flex-col justify-center rounded-2xl p-6",
+        "stagger-item flex flex-col justify-center rounded-2xl p-6",
         className,
       )}
     >
@@ -38,19 +41,26 @@ type PhotoCellProps = {
 
 function PhotoCell({ src, alt, className, sizes }: PhotoCellProps) {
   return (
-    <div className={cn("relative overflow-hidden rounded-2xl", className)}>
+    <div
+      className={cn(
+        "stagger-item group relative overflow-hidden rounded-2xl",
+        className,
+      )}
+    >
       <Image
         src={src}
         alt={alt}
         fill
         sizes={sizes ?? "(min-width: 768px) 25vw, 100vw"}
-        className="object-cover"
+        className="object-cover transition-transform duration-500 [transition-timing-function:var(--ease-out-quart)] group-hover:scale-[1.04]"
       />
     </div>
   );
 }
 
 export function FacilitiesSection() {
+  const gridRef = useScrollReveal<HTMLDivElement>();
+
   return (
     <section className="bg-white py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -61,7 +71,7 @@ export function FacilitiesSection() {
             </h2>
             <button
               type="button"
-              className="mt-6 rounded-[10px] bg-tas-navy px-6 py-3 font-bold text-white transition-opacity hover:opacity-90"
+              className="btn-tactile mt-6 rounded-[10px] bg-tas-navy px-6 py-3 font-bold text-white hover:opacity-90"
             >
               Tìm hiểu thêm
             </button>
@@ -74,7 +84,10 @@ export function FacilitiesSection() {
           </p>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-4 md:auto-rows-[180px]">
+        <div
+          ref={gridRef}
+          className="stagger-reveal mt-10 grid grid-cols-1 gap-4 md:grid-cols-4 md:auto-rows-[180px]"
+        >
           <PhotoCell
             src={BUILDING_EXTERIOR_IMG}
             alt="CIS campus building exterior with swimming pool"

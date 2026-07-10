@@ -179,6 +179,24 @@
   }
 }
 
+@keyframes hero-kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+/* Slow continuous zoom on the active hero slide. Scoped to its own media
+   query (not the generic reduced-motion override) so slides stay perfectly
+   static rather than flickering between scales under reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-kenburns {
+    animation: hero-kenburns 12s var(--ease-out-quart) infinite alternate;
+  }
+}
+
 /* Above-the-fold entrance: plays once on load, not scroll-gated, so
    content is never hidden waiting on an observer or a paused timeline. */
 .enter-rise {

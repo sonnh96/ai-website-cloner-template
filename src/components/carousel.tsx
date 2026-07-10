@@ -5,21 +5,20 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, type ReactNode } from "react";
 
 interface CarouselProps {
-  slideCount: number;
-  children: (index: number) => ReactNode;
+  slides: ReactNode[];
   arrowVariant?: "circle" | "square";
   className?: string;
   arrowClassName?: string;
 }
 
 export function Carousel({
-  slideCount,
-  children,
+  slides,
   arrowVariant = "circle",
   className,
   arrowClassName,
 }: CarouselProps) {
   const [index, setIndex] = useState(0);
+  const slideCount = slides.length;
 
   const go = (delta: number) => {
     setIndex((prev) => (prev + delta + slideCount) % slideCount);
@@ -32,9 +31,9 @@ export function Carousel({
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${index * 100}%)` }}
         >
-          {Array.from({ length: slideCount }, (_, i) => (
+          {slides.map((slide, i) => (
             <div key={i} className="w-full shrink-0">
-              {children(i)}
+              {slide}
             </div>
           ))}
         </div>

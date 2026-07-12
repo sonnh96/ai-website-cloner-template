@@ -8,10 +8,10 @@ const SLIDE_COUNT = 3;
 
 function HeroSlide() {
   return (
-    <div className="relative flex w-full shrink-0 snap-start flex-col items-center gap-10 px-6 pt-32 pb-40 sm:px-10 md:flex-row md:items-center md:gap-8 md:pt-40 md:pb-48 lg:px-16 xl:px-24">
+    <div className="kd-hero-1-item relative flex w-full shrink-0 snap-start flex-col items-center gap-10 px-6 pt-32 pb-40 sm:px-10 md:flex-row md:items-center md:gap-8 md:pt-40 md:pb-48 lg:px-16 xl:px-24">
       {/* Text content */}
       <div className="relative z-10 w-full max-w-xl text-center md:w-1/2 md:text-left">
-        <span className="kd-reveal kd-subtitle-ani-1 relative mb-4 inline-flex items-center gap-2 font-script text-2xl text-kd-secondary sm:text-3xl">
+        <span className="kd-hero-subtitle kd-subtitle-ani-1 relative mb-4 inline-flex items-center gap-2 font-script text-2xl text-kd-secondary sm:text-3xl">
           <Image
             src="/images/kadu/2024/05/star-1.webp"
             alt=""
@@ -29,14 +29,11 @@ function HeroSlide() {
           />
         </span>
 
-        <h1 className="kd-hero-title font-sans text-4xl font-black leading-[1.13] tracking-wide text-white sm:text-5xl md:text-6xl lg:text-[70px]">
+        <h1 className="kd-hero-title font-sans text-4xl font-black leading-[1.13] tracking-wide text-white sm:text-[55px] md:text-6xl lg:text-[75px]">
           Online Platform For Education.
         </h1>
 
-        <p
-          className="kd-reveal mt-6 text-lg text-white/85 sm:text-xl"
-          style={{ animationDelay: "0.2s" }}
-        >
+        <p className="kd-hero-disc mt-6 max-w-[560px] text-lg text-white/85 sm:text-xl">
           We don&apos;t just work with concrete and steel. We work with people{" "}
           <span className="underline decoration-white/60 underline-offset-2">
             We are Approachable
@@ -45,10 +42,7 @@ function HeroSlide() {
           with people
         </p>
 
-        <div
-          className="kd-reveal mt-8 flex justify-center md:justify-start"
-          style={{ animationDelay: "0.3s" }}
-        >
+        <div className="kd-hero-btn-wrap mt-8 flex justify-center md:justify-start">
           <a
             href="#"
             className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-kd-secondary px-8 py-5 text-sm font-extrabold uppercase text-[#22281e] transition-colors duration-300 ease-[cubic-bezier(.57,.21,.69,1.25)] hover:bg-kd-primary hover:text-white"
@@ -64,77 +58,89 @@ function HeroSlide() {
             <ArrowRightIcon className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
           </a>
         </div>
-
-        {/* Wavy squiggle divider */}
-        <svg
-          width="140"
-          height="30"
-          viewBox="0 0 140 30"
-          fill="none"
-          className="mx-auto mt-10 hidden sm:block md:mx-0"
-          aria-hidden="true"
-        >
-          <path
-            d="M2 24C13 6 24 6 35 24C46 42 57 6 70 6C81 6 92 42 105 24C114 11 126 6 138 12"
-            stroke="var(--kd-clr-sd-1)"
-            strokeWidth="3"
-            strokeLinecap="round"
-          />
-        </svg>
       </div>
 
-      {/* Hero photo */}
-      <div className="relative z-10 flex w-full justify-center md:w-1/2 md:justify-end">
-        <div className="relative size-64 sm:size-80 md:size-96 lg:size-[26rem]">
-          <div className="absolute inset-4 rounded-full bg-kd-secondary/90" />
+      {/* Hero image group — original .kd-hero-1-item-img composition */}
+      <div className="relative z-10 flex w-full justify-center md:w-1/2 md:justify-end lg:-ml-[50px]">
+        <div className="relative w-full max-w-[465px]">
+          {/* img-1: main photo sliding up into a bottom-rounded mask */}
+          <div className="kd-hero-img-1 relative h-[420px] w-full overflow-hidden rounded-b-[140px] sm:h-[500px] lg:h-[600px]">
+            <Image
+              src="/images/kadu/2024/05/h1-img-1.webp"
+              alt="Student in an orange hoodie carrying a backpack"
+              fill
+              priority
+              sizes="(min-width: 1024px) 465px, 90vw"
+              className="object-cover object-top"
+            />
+          </div>
 
-          <Image
-            src="/images/kadu/2024/05/h1-img-2.webp"
-            alt=""
-            width={260}
-            height={260}
-            className="absolute -bottom-4 -left-6 z-0 w-2/5 rounded-3xl object-cover opacity-90 sm:-left-8"
-          />
+          {/* img-2: circular photo with orange multiply overlay, scales in behind */}
+          <div className="kd-hero-img-2 absolute right-[-35px] top-[50px] -z-10 hidden size-[320px] overflow-hidden rounded-full md:block lg:size-[435px]">
+            <Image
+              src="/images/kadu/2024/05/h1-img-2.webp"
+              alt=""
+              fill
+              sizes="435px"
+              className="rounded-full object-cover"
+            />
+            <span
+              className="absolute inset-0 rounded-full bg-kd-secondary mix-blend-multiply"
+              aria-hidden="true"
+            />
+          </div>
 
-          <Image
-            src="/images/kadu/2024/05/h1-img-1.webp"
-            alt="Student in an orange hoodie carrying a backpack"
-            width={420}
-            height={480}
-            priority
-            className="absolute inset-0 z-10 mx-auto h-full w-full object-contain drop-shadow-2xl"
-          />
+          {/* il-1: dashed-circle deco, fades in from (-40,-50) */}
+          <div className="kd-hero-il-1 absolute right-0 top-[70px] -z-20 hidden w-[70%] md:block">
+            <Image
+              src="/images/kadu/2024/05/h1-il-1.webp"
+              alt=""
+              width={437}
+              height={438}
+              className="h-auto w-full"
+              aria-hidden="true"
+            />
+          </div>
 
-          <Image
-            src="/images/kadu/2024/05/h1-il-1.webp"
-            alt=""
-            width={64}
-            height={64}
-            className="absolute -right-4 top-2 z-20 w-14 sm:w-16"
-          />
+          {/* il-2: deco shape, spins in from -100deg */}
+          <div className="kd-hero-il-2 absolute bottom-0 left-[50px] -z-20 hidden w-[70%] md:block">
+            <Image
+              src="/images/kadu/2024/05/h1-il-2.webp"
+              alt=""
+              width={439}
+              height={433}
+              className="h-auto w-full"
+              aria-hidden="true"
+            />
+          </div>
+
+          {/* il-3/4/5: mouse-parallax accents */}
           <Image
             src="/images/kadu/2024/05/h1-il-3.webp"
             alt=""
-            width={40}
-            height={40}
+            width={113}
+            height={39}
             data-value="2"
-            className="txa-mm-elm absolute -left-2 top-1/3 z-20 w-8 sm:w-10"
+            className="txa-mm-elm absolute bottom-[10px] left-[-210px] hidden lg:block"
+            aria-hidden="true"
           />
           <Image
             src="/images/kadu/2024/05/h1-il-4.webp"
             alt=""
-            width={28}
-            height={28}
+            width={41}
+            height={41}
             data-value="3"
-            className="txa-mm-elm absolute bottom-6 right-2 z-20 w-6 sm:w-7"
+            className="txa-mm-elm absolute right-[12%] top-0 hidden md:block"
+            aria-hidden="true"
           />
           <Image
             src="/images/kadu/2024/05/h1-il-5.webp"
             alt=""
-            width={32}
-            height={32}
+            width={134}
+            height={55}
             data-value="-2"
-            className="txa-mm-elm absolute -top-4 left-1/3 z-20 w-7 sm:w-8"
+            className="txa-mm-elm absolute bottom-[30px] right-[100px] hidden md:block"
+            aria-hidden="true"
           />
         </div>
       </div>

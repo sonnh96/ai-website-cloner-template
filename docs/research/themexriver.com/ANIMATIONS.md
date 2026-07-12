@@ -28,11 +28,18 @@ animate.css, Splitting.js, Swiper, tilt.jquery, counterup**.
 | 15 | `.wow` (+Splitting `data-splitting` paras & footer titles) | animate.css `fadeInUp`; split chars: `fadeInUp 0.4s cubic-bezier(0.3,0,0.7,1)` delay `30ms × char-index` | viewport enter |
 | 16 | `.counter` stat numbers | counterUp: delay 10, time 3000 | waypoint |
 
-## Load-time (hero)
-| # | Element | Animation |
-|---|---|---|
-| 17 | Hero H1 (active slide) | SplitText chars `{opacity:0, y:50}` → in, `ease:"back"`, duration .5, delay 1, stagger 0.05 |
-| 18 | Hero slide-active content (CSS transition-delay) | subtitle translateY+opacity delay 1s; desc clip-path reveal delay 1s; btn delay 2s; img-1 translateY delay 1s; img-2 scale delay 1s; deco il-1/il-2 rotate/translate delay .5s |
+## Load-time (hero) — CSS transitions keyed off `.swiper-slide-active` (clone: `.is-active`)
+| # | Element | Initial → Active | Transition |
+|---|---|---|---|
+| 17 | Hero H1 | SplitText chars `{opacity:0, y:50}` → in, `ease:"back"`, duration .5, delay 1, stagger 0.05 (GSAP) | — |
+| 18a | `.kd-subtitle-1` eyebrow | `translateY(-50px), opacity 0` → 0/1, delay **1s** | `1s var(--cube-2)` = cubic-bezier(0.31,-0.105,0.43,1.4) |
+| 18b | `.disc` paragraph | `clip-path polygon(0 0,100% 0,100% 0,0 0)` → full, delay **1s** | `2s var(--cube-1)` |
+| 18c | `.btn-wrap` | `translateY(-50px), opacity 0` → 0/1, delay **2s** | `1s var(--cube-1)` |
+| 18d | `img-1` main photo (in 465×600 mask, `border-radius 0 0 140px 140px`) | img `translateY(100%)` → 0, delay **1s** | `1s ease-in-out` |
+| 18e | `img-2` circle photo (435px, `::after` orange `mix-blend-mode: multiply` overlay) | img `scale(0)` → 1, delay **1s** | `1s var(--cube-1)` |
+| 18f | `il-1` deco (right 0, top 70, w 70%) | `translate(-40px,-50px), opacity 0` → 0/1, delay **.5s** | `1s var(--cube-1)` |
+| 18g | `il-2` deco (bottom 0, left 50, w 70%) | `rotate(-100deg), opacity 0` → 0/1, delay **.5s** | `1s var(--cube-1)` |
+| 18h | `il-3/4/5` accents (left -210/bottom 10, right 12%/top 0, right 100/bottom 30) | mouse parallax `txa-mm-elm` | — |
 
 ## Sliders (Swiper, all loop + autoplay)
 | # | Slider | Config |

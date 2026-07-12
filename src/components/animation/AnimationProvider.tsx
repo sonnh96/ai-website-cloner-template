@@ -71,6 +71,13 @@ export function AnimationProvider() {
       if (cancelled) return;
       ctx = createAnimations();
       ScrollTrigger.refresh();
+      // Hero slide staged entrance — the original adds swiper-slide-active, which
+      // its CSS transitions key off; our equivalent hook class is .is-active.
+      // Force a reflow first so initial transition states are committed.
+      void document.body.offsetHeight;
+      document
+        .querySelectorAll<HTMLElement>(".kd-hero-1-item")
+        .forEach((slide) => slide.classList.add("is-active"));
     });
 
     const createAnimations = () => gsap.context(() => {
@@ -267,6 +274,9 @@ export function AnimationProvider() {
       cancelled = true;
       ctx?.revert();
       splitInstances.forEach((s) => s.revert());
+      document
+        .querySelectorAll<HTMLElement>(".kd-hero-1-item.is-active")
+        .forEach((slide) => slide.classList.remove("is-active"));
       document.removeEventListener("mousemove", parallax);
       autoplayTimers.forEach(clearInterval);
       cancelAnimationFrame(rafId);

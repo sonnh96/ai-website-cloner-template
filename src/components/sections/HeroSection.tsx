@@ -65,7 +65,7 @@ function HeroSlide() {
         <div className="relative w-full max-w-[465px]">
           {/* img-1: main photo sliding up into a bottom-rounded mask; narrower and
               left-aligned so the img-2 circle stays visible on the right */}
-          <div className="kd-hero-img-1 relative mr-auto h-[380px] w-[82%] overflow-hidden rounded-b-[140px] sm:h-[450px] lg:h-[540px]">
+          <div className="kd-hero-img-1 relative mr-auto h-[380px] w-[82%] overflow-hidden rounded-b-[140px] sm:h-[450px] md:-ml-6 lg:-ml-12 lg:h-[540px]">
             <Image
               src="/images/kadu/2024/05/h1-img-1.webp"
               alt="Student in an orange hoodie carrying a backpack"

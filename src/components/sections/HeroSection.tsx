@@ -8,7 +8,7 @@ const SLIDE_COUNT = 3;
 
 function HeroSlide() {
   return (
-    <div className="kd-hero-1-item relative flex w-full shrink-0 snap-start flex-col items-center gap-10 px-6 pt-32 pb-40 sm:px-10 md:flex-row md:items-center md:gap-8 md:pt-40 md:pb-48 lg:px-16 xl:px-24">
+    <div className="kd-hero-1-item relative flex w-full shrink-0 snap-start flex-col items-center gap-8 px-6 py-16 sm:px-10 sm:py-20 md:flex-row md:items-center md:gap-8 md:py-16 lg:px-16 lg:py-20 xl:px-24">
       {/* Text content */}
       <div className="relative z-10 w-full max-w-xl text-center md:w-1/2 md:text-left">
         <span className="kd-hero-subtitle kd-subtitle-ani-1 relative mb-4 inline-flex items-center gap-2 font-script text-2xl text-kd-secondary sm:text-3xl">
@@ -29,11 +29,11 @@ function HeroSlide() {
           />
         </span>
 
-        <h1 className="kd-hero-title font-sans text-4xl font-black leading-[1.13] tracking-wide text-white sm:text-[55px] md:text-6xl lg:text-[75px]">
+        <h1 className="kd-hero-title font-sans text-4xl font-black leading-[1.13] tracking-wide text-white sm:text-5xl md:text-6xl lg:text-[64px]">
           Online Platform For Education.
         </h1>
 
-        <p className="kd-hero-disc mt-6 max-w-[560px] text-lg text-white/85 sm:text-xl">
+        <p className="kd-hero-disc mt-4 max-w-[560px] text-base text-white/85 sm:text-lg">
           We don&apos;t just work with concrete and steel. We work with people{" "}
           <span className="underline decoration-white/60 underline-offset-2">
             We are Approachable
@@ -42,10 +42,10 @@ function HeroSlide() {
           with people
         </p>
 
-        <div className="kd-hero-btn-wrap mt-8 flex justify-center md:justify-start">
+        <div className="kd-hero-btn-wrap mt-6 flex justify-center md:justify-start">
           <a
             href="#"
-            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-kd-secondary px-8 py-5 text-sm font-extrabold uppercase text-[#22281e] transition-colors duration-300 ease-[cubic-bezier(.57,.21,.69,1.25)] hover:bg-kd-primary hover:text-white"
+            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-kd-secondary px-7 py-4 text-sm font-extrabold uppercase text-[#22281e] transition-colors duration-300 ease-[cubic-bezier(.57,.21,.69,1.25)] hover:bg-kd-primary hover:text-white"
           >
             <span className="relative overflow-hidden">
               <span className="block transition-transform duration-500 group-hover:-translate-y-full group-hover:opacity-0">
@@ -62,22 +62,22 @@ function HeroSlide() {
 
       {/* Hero image group — original .kd-hero-1-item-img composition */}
       <div className="relative z-10 flex w-full justify-center md:w-1/2 md:justify-end lg:-ml-[50px]">
-        <div className="relative w-full max-w-[465px]">
+        <div className="relative w-full max-w-[400px]">
           {/* img-1: main photo sliding up into a bottom-rounded mask; narrower and
               left-aligned so the img-2 circle stays visible on the right */}
-          <div className="kd-hero-img-1 relative mr-auto h-[380px] w-[82%] overflow-hidden rounded-b-[140px] sm:h-[450px] md:-ml-6 lg:-ml-12 lg:h-[540px]">
+          <div className="kd-hero-img-1 relative mr-auto h-[280px] w-[82%] overflow-hidden rounded-b-[110px] sm:h-[340px] md:-ml-6 lg:-ml-12 lg:h-[420px]">
             <Image
               src="/images/kadu/2024/05/h1-img-1.webp"
               alt="Student in an orange hoodie carrying a backpack"
               fill
               priority
-              sizes="(min-width: 1024px) 465px, 90vw"
+              sizes="(min-width: 1024px) 400px, 90vw"
               className="object-cover object-top"
             />
           </div>
 
           {/* img-2: circular photo with orange multiply overlay, scales in behind */}
-          <div className="kd-hero-img-2 absolute right-[-35px] top-[50px] -z-10 hidden size-[320px] overflow-hidden rounded-full md:block lg:size-[435px]">
+          <div className="kd-hero-img-2 absolute right-[-35px] top-[40px] -z-10 hidden size-[260px] overflow-hidden rounded-full md:block lg:size-[350px]">
             <Image
               src="/images/kadu/2024/05/h1-img-2.webp"
               alt=""
@@ -179,7 +179,7 @@ export function HeroSection() {
       </div>
 
       {/* Social row */}
-      <div className="absolute bottom-8 left-6 z-20 hidden items-center gap-6 sm:flex lg:left-16">
+      <div className="absolute bottom-16 left-6 z-30 hidden items-center gap-6 sm:flex lg:bottom-20 lg:left-16">
         <a
           href="#"
           className="text-xs font-bold uppercase tracking-widest text-white/80 transition-colors hover:text-kd-secondary"
@@ -201,7 +201,7 @@ export function HeroSection() {
       </div>
 
       {/* Slider nav */}
-      <div className="absolute bottom-8 right-6 z-20 flex items-center gap-4 lg:right-16">
+      <div className="absolute bottom-16 right-6 z-30 flex items-center gap-4 lg:bottom-20 lg:right-16">
         <button
           type="button"
           onClick={() => scrollByOne(-1)}

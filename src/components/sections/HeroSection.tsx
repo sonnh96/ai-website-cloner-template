@@ -167,6 +167,12 @@ export function HeroSection() {
         priority
         className="pointer-events-none object-cover"
       />
+      {/* Recolors the baked-in green texture to the current primary color, preserving
+          the original's tonal variation (mix-blend-mode: color keeps luminosity, swaps hue). */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-kd-primary mix-blend-color"
+      />
 
       <div
         ref={trackRef}

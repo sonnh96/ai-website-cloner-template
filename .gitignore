@@ -45,5 +45,19 @@ next-env.d.ts
 .claude/skills/customize/
 .claude/skills/release/
 
+# impeccable skill install (per-user tooling, not part of the template) —
+# installs itself across every harness dir it finds; only the impeccable
+# subfolder is ignored so other harness skills (e.g. clone-website) stay tracked
+.claude/skills/impeccable/
+.agents/skills/impeccable/
+.codex/skills/impeccable/
+.cursor/skills/impeccable/
+.gemini/skills/impeccable/
+.github/skills/impeccable/
+.opencode/skills/impeccable/
+.codex/hooks.json
+.cursor/hooks.json
+.github/hooks/
+
 # Local temp files
 temp/

@@ -90,7 +90,7 @@ export function AnimationProvider() {
         splitInstances.push(split);
         gsap.set(el, { perspective: 400 });
         if (el.classList.contains("kd-title-ani")) {
-          gsap.set(split.chars, { opacity: 1, color: "#005e4f", x: 50 });
+          gsap.set(split.chars, { opacity: 1, color: "#a10000", x: 50 });
         }
         gsap.to(split.chars, {
           scrollTrigger: { trigger: el, start: "top 90%" },

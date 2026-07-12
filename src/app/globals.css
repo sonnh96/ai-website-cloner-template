@@ -142,23 +142,103 @@
     @apply bg-background text-foreground;
   }
   html {
-    @apply font-sans scroll-smooth;
+    /* no scroll-smooth: Lenis (duration 1.2, as the original theme) owns scrolling */
+    @apply font-sans;
   }
 }
 
-/* Scroll-reveal entrance animation (WOW.js-equivalent used across all Kadu sections) */
-@keyframes kd-fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* Scroll-reveal (WOW.js fadeInUp equivalent) — initial state only; GSAP ScrollTrigger
+   in AnimationProvider animates it in. Keeping the element visible without JS. */
 .kd-reveal {
-  opacity: 0;
-  animation: kd-fade-in-up 0.8s ease forwards;
+  will-change: transform, opacity;
+}
+
+/* Jello skew wobble — themes/kadu main.css @keyframes kd-jello (exact copy).
+   Applied on hover to icons: category cards, service cards, choose-us features, header contact. */
+@keyframes kd-jello {
+  11.1% {
+    transform: none;
+  }
+  22.2% {
+    transform: skewX(-12.5deg) skewY(-12.5deg);
+  }
+  33.3% {
+    transform: skewX(6.25deg) skewY(6.25deg);
+  }
+  44.4% {
+    transform: skewX(-3.125deg) skewY(-3.125deg);
+  }
+  55.5% {
+    transform: skewX(1.5625deg) skewY(1.5625deg);
+  }
+  66.6% {
+    transform: skewX(-0.78125deg) skewY(-0.78125deg);
+  }
+  77.7% {
+    transform: skewX(0.390625deg) skewY(0.390625deg);
+  }
+  88.8% {
+    transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+.kd-jello-hover:hover .kd-jello-target {
+  animation: 1s kd-jello;
+}
+
+/* Card image zoom — main.css: perspective(600px) rotateX(.06deg) scaleX(1.15) scaleY(1.15) */
+.kd-zoom img {
+  transition: transform 0.5s;
+}
+.kd-zoom:hover img {
+  transform: perspective(600px) rotateX(0.06deg) rotateY(0deg) scaleX(1.15) scaleY(1.15);
+}
+
+/* Play button pulse rings — main.css .kd-plybtn-1::before/::after (scale 1→2, fade out) */
+@keyframes kd-plybtn-1 {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+.kd-plybtn {
+  position: relative;
+}
+.kd-plybtn::before,
+.kd-plybtn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.6);
+  opacity: 0.5;
+  z-index: -1;
+  animation: kd-plybtn-1 2s linear infinite;
+}
+.kd-plybtn::after {
+  animation-duration: 4s;
+}
+
+/* Footer app badges — txaa-tilt_scale approximation (tilt.js scale on hover) */
+.kd-tilt-scale {
+  transition: transform 0.3s ease;
+}
+.kd-tilt-scale:hover {
+  transform: scale(1.08);
+}
+
+/* SplitText line wrapper (linesClass: "split-line" in the original) */
+.split-line {
+  overflow: hidden;
 }

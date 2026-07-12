@@ -77,11 +77,11 @@ export function VideoCoursesSection() {
   return (
     <section className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
-        <div className="kd-reveal flex flex-col items-center text-center">
-          <span className="font-script text-2xl text-kd-secondary md:text-3xl">
+        <div className="flex flex-col items-center text-center">
+          <span className="kd-subtitle-ani-1 font-script text-2xl text-kd-secondary md:text-3xl">
             Video Course
           </span>
-          <h2 className="mt-2 max-w-2xl font-sans text-3xl font-black leading-tight text-kd-heading md:text-4xl lg:text-5xl">
+          <h2 className="kd-split-text kd-title-ani mt-2 max-w-2xl font-sans text-3xl font-black leading-tight text-kd-heading md:text-4xl lg:text-5xl">
             Online Video Courses
           </h2>
         </div>
@@ -136,6 +136,7 @@ export function VideoCoursesSection() {
         <div className="relative mt-14">
           <div
             ref={scrollRef}
+            data-kd-autoplay="5000"
             className={cn(
               "flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-4 transition-opacity ease-in-out",
               visible ? "opacity-100" : "opacity-0"
@@ -152,14 +153,14 @@ export function VideoCoursesSection() {
                   alt={`${activeTrainer.name} video course preview ${index + 1}`}
                   fill
                   sizes="(min-width: 640px) 400px, 85vw"
-                  className="object-cover"
+                  className="object-cover transition-transform duration-500 group-hover:[transform:perspective(600px)_rotateX(0.06deg)_scale(1.15)]"
                 />
                 <button
                   type="button"
                   aria-label="Play video"
                   className="absolute inset-0 flex items-center justify-center"
                 >
-                  <span className="flex size-16 items-center justify-center rounded-full bg-white/90 shadow-lg transition-transform duration-300 group-hover:scale-110">
+                  <span className="kd-plybtn flex size-16 items-center justify-center rounded-full bg-white/90 shadow-lg transition-transform duration-300 group-hover:scale-110">
                     <PlayIcon className="size-6 text-kd-primary" />
                   </span>
                 </button>

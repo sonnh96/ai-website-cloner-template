@@ -32,10 +32,10 @@ export function Footer() {
       />
 
       <div className="relative mx-auto max-w-7xl px-6 pb-16 pt-20 lg:px-12">
-        <div className="flex flex-col items-center justify-between gap-8 border-b border-white/15 pb-16 text-center lg:flex-row lg:text-left">
+        <div className="txaa-scale-up flex flex-col items-center justify-between gap-8 border-b border-white/15 pb-16 text-center lg:flex-row lg:text-left">
           <div>
-            <p className="font-script text-2xl text-kd-secondary">Download App and learn Couses</p>
-            <h2 className="mt-2 max-w-xl font-sans text-3xl font-black leading-tight md:text-4xl">
+            <p className="kd-reveal font-script text-2xl text-kd-secondary">Download App and learn Couses</p>
+            <h2 className="kd-reveal mt-2 max-w-xl font-sans text-3xl font-black leading-tight md:text-4xl">
               Grow Personal Financial Security Thinking &amp; Principles
             </h2>
           </div>
@@ -45,14 +45,14 @@ export function Footer() {
               alt="Get it on Google Play"
               width={168}
               height={50}
-              className="h-12 w-auto rounded-xl bg-white/95 p-2"
+              className="kd-tilt-scale h-12 w-auto rounded-xl bg-white/95 p-2"
             />
             <Image
               src="/images/kadu/2024/06/app-store.webp"
               alt="Download on the App Store"
               width={150}
               height={50}
-              className="h-12 w-auto rounded-xl bg-black p-2"
+              className="kd-tilt-scale h-12 w-auto rounded-xl bg-black p-2"
             />
           </div>
         </div>

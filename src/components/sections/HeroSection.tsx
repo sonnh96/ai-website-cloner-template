@@ -11,7 +11,7 @@ function HeroSlide() {
     <div className="relative flex w-full shrink-0 snap-start flex-col items-center gap-10 px-6 pt-32 pb-40 sm:px-10 md:flex-row md:items-center md:gap-8 md:pt-40 md:pb-48 lg:px-16 xl:px-24">
       {/* Text content */}
       <div className="relative z-10 w-full max-w-xl text-center md:w-1/2 md:text-left">
-        <span className="kd-reveal relative mb-4 inline-flex items-center gap-2 font-script text-2xl text-kd-secondary sm:text-3xl">
+        <span className="kd-reveal kd-subtitle-ani-1 relative mb-4 inline-flex items-center gap-2 font-script text-2xl text-kd-secondary sm:text-3xl">
           <Image
             src="/images/kadu/2024/05/star-1.webp"
             alt=""
@@ -29,10 +29,7 @@ function HeroSlide() {
           />
         </span>
 
-        <h1
-          className="kd-reveal font-sans text-4xl font-black leading-[1.13] tracking-wide text-white sm:text-5xl md:text-6xl lg:text-[70px]"
-          style={{ animationDelay: "0.1s" }}
-        >
+        <h1 className="kd-hero-title font-sans text-4xl font-black leading-[1.13] tracking-wide text-white sm:text-5xl md:text-6xl lg:text-[70px]">
           Online Platform For Education.
         </h1>
 
@@ -120,21 +117,24 @@ function HeroSlide() {
             alt=""
             width={40}
             height={40}
-            className="absolute -left-2 top-1/3 z-20 w-8 sm:w-10"
+            data-value="2"
+            className="txa-mm-elm absolute -left-2 top-1/3 z-20 w-8 sm:w-10"
           />
           <Image
             src="/images/kadu/2024/05/h1-il-4.webp"
             alt=""
             width={28}
             height={28}
-            className="absolute bottom-6 right-2 z-20 w-6 sm:w-7"
+            data-value="3"
+            className="txa-mm-elm absolute bottom-6 right-2 z-20 w-6 sm:w-7"
           />
           <Image
             src="/images/kadu/2024/05/h1-il-5.webp"
             alt=""
             width={32}
             height={32}
-            className="absolute -top-4 left-1/3 z-20 w-7 sm:w-8"
+            data-value="-2"
+            className="txa-mm-elm absolute -top-4 left-1/3 z-20 w-7 sm:w-8"
           />
         </div>
       </div>
@@ -163,6 +163,7 @@ export function HeroSection() {
 
       <div
         ref={trackRef}
+        data-kd-autoplay="6000"
         className="relative z-10 flex snap-x snap-mandatory overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {Array.from({ length: SLIDE_COUNT }).map((_, i) => (

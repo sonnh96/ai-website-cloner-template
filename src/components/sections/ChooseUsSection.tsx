@@ -58,11 +58,11 @@ export function ChooseUsSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left column: illustration + copy + features */}
-          <div className="kd-reveal">
-            <span className="font-script text-2xl text-kd-primary sm:text-3xl">
+          <div>
+            <span className="kd-subtitle-ani-1 font-script text-2xl text-kd-primary sm:text-3xl">
               Get To Know Us
             </span>
-            <h2 className="mt-3 text-3xl font-black leading-tight text-kd-heading sm:text-4xl lg:text-[42px]">
+            <h2 className="kd-split-text kd-title-ani mt-3 text-3xl font-black leading-tight text-kd-heading sm:text-4xl lg:text-[42px]">
               Don&apos;t Know How To Start Quiklearn Courses
             </h2>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-kd-paragraph">
@@ -73,21 +73,25 @@ export function ChooseUsSection() {
 
             {/* Illustration */}
             <div className="relative mx-auto mt-10 w-full max-w-md">
-              <Image
-                src="/images/kadu/2024/06/c-us-1-bg-shape-1.webp"
-                alt=""
-                width={520}
-                height={520}
-                aria-hidden="true"
-                className="absolute inset-0 -z-10 h-full w-full scale-110 object-contain opacity-90"
-              />
-              <Image
-                src="/images/kadu/2024/06/c-us-1-img-1.webp"
-                alt="Quiklearn students getting started with courses"
-                width={480}
-                height={480}
-                className="relative z-10 h-auto w-full object-contain"
-              />
+              <span className="txaa-slide-right absolute inset-0 -z-10 block">
+                <Image
+                  src="/images/kadu/2024/06/c-us-1-bg-shape-1.webp"
+                  alt=""
+                  width={520}
+                  height={520}
+                  aria-hidden="true"
+                  className="h-full w-full scale-110 object-contain opacity-90"
+                />
+              </span>
+              <span className="kd-img-ani-1 relative z-10 block overflow-hidden rounded-full">
+                <Image
+                  src="/images/kadu/2024/06/c-us-1-img-1.webp"
+                  alt="Quiklearn students getting started with courses"
+                  width={480}
+                  height={480}
+                  className="h-auto w-full object-contain"
+                />
+              </span>
               <span className="absolute -left-4 top-6 z-20 flex h-16 w-16 items-center justify-center rounded-full bg-white p-2 shadow-[0_10px_30px_rgba(0,0,0,0.12)] sm:h-20 sm:w-20">
                 <Image
                   src="/images/kadu/2024/06/c-us-1-icon-1.webp"
@@ -113,8 +117,8 @@ export function ChooseUsSection() {
             {/* Feature rows */}
             <div className="mt-10 space-y-6">
               {features.map((feature) => (
-                <div key={feature.title} className="flex items-start gap-4">
-                  <span className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-kd-primary/10 text-kd-primary">
+                <div key={feature.title} className="kd-jello-hover flex items-start gap-4">
+                  <span className="kd-jello-target mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-kd-primary/10 text-kd-primary">
                     <CheckCircleIcon className="h-6 w-6" />
                   </span>
                   <div>
@@ -148,11 +152,11 @@ export function ChooseUsSection() {
           </div>
 
           {/* Right column: 2x2 service card grid */}
-          <div className="kd-reveal grid grid-cols-2 gap-4 sm:gap-6">
+          <div className="txaa-slide-down-1 grid grid-cols-2 gap-4 sm:gap-6">
             {serviceCards.map((card, index) => (
               <div
                 key={`${card.title}-${index}`}
-                className="rounded-2xl bg-white p-5 shadow-[0_0_15px_rgba(0,0,0,0.08)] sm:p-7"
+                className="txaa-slide-down-1-item kd-jello-hover rounded-2xl bg-white p-5 shadow-[0_0_15px_rgba(0,0,0,0.08)] sm:p-7"
               >
                 <Image
                   src={card.icon}
@@ -160,7 +164,7 @@ export function ChooseUsSection() {
                   width={48}
                   height={48}
                   aria-hidden="true"
-                  className="h-12 w-12 object-contain"
+                  className="kd-jello-target h-12 w-12 object-contain"
                 />
                 <h3 className="mt-4 text-base font-bold text-kd-heading sm:text-lg">
                   {card.title}

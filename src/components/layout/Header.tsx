@@ -64,8 +64,8 @@ export function Header() {
     <header className="kd-header-1-area">
       <div className="hidden items-center justify-between border-b border-black/5 px-6 py-3 md:flex lg:px-12">
         <div className="flex items-center gap-8 text-sm text-kd-paragraph">
-          <span className="flex items-center gap-2">
-            <span className="flex size-9 items-center justify-center rounded-full bg-kd-heading text-white">
+          <span className="kd-jello-hover flex items-center gap-2">
+            <span className="kd-jello-target flex size-9 items-center justify-center rounded-full bg-kd-heading text-white">
               <MailIcon className="size-4" />
             </span>
             <span>
@@ -76,8 +76,8 @@ export function Header() {
               </a>
             </span>
           </span>
-          <span className="flex items-center gap-2">
-            <span className="flex size-9 items-center justify-center rounded-full bg-kd-heading text-white">
+          <span className="kd-jello-hover flex items-center gap-2">
+            <span className="kd-jello-target flex size-9 items-center justify-center rounded-full bg-kd-heading text-white">
               <PhoneIcon className="size-4" />
             </span>
             <span>

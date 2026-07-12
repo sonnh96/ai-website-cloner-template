@@ -43,8 +43,8 @@ export function TestimonialsSection() {
     <section className="overflow-hidden bg-white py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-col items-start justify-between gap-10 md:flex-row md:items-end">
-          <div className="kd-reveal flex max-w-xl items-start gap-6">
-            <div className="relative hidden h-32 w-28 shrink-0 sm:block">
+          <div className="flex max-w-xl items-start gap-6">
+            <div className="kd-img-ani-1 relative hidden h-32 w-28 shrink-0 sm:block">
               <div className="absolute left-0 top-2 h-24 w-20 overflow-hidden rounded-2xl shadow-lg">
                 <Image
                   src="/images/kadu/2024/05/t1-img-1.webp"
@@ -66,8 +66,8 @@ export function TestimonialsSection() {
             </div>
 
             <div>
-              <span className="font-script text-3xl text-kd-primary">testimonial</span>
-              <h2 className="mt-2 font-sans text-3xl font-black text-kd-heading sm:text-4xl lg:text-5xl">
+              <span className="kd-subtitle-ani-1 font-script text-3xl text-kd-primary">testimonial</span>
+              <h2 className="kd-split-text kd-title-ani mt-2 font-sans text-3xl font-black text-kd-heading sm:text-4xl lg:text-5xl">
                 What Students Have To Say
               </h2>
               <p className="mt-4 text-kd-paragraph">
@@ -99,7 +99,8 @@ export function TestimonialsSection() {
 
         <div
           ref={trackRef}
-          className="mt-14 flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          data-kd-autoplay="5000"
+          className="txaa-fade-right mt-14 flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         >
           {testimonials.map((testimonial, index) => (
             <article

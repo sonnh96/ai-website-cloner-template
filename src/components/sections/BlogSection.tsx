@@ -29,28 +29,28 @@ const posts: BlogPost[] = [
 
 export function BlogSection() {
   return (
-    <section className="kd-reveal relative overflow-hidden bg-kd-primary py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-kd-primary py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="font-script text-2xl text-white/80">Our Blog</p>
-          <h2 className="mt-2 font-sans text-4xl font-black leading-tight text-white md:text-[40px]">
+          <p className="kd-subtitle-ani-1 font-script text-2xl text-white/80">Our Blog</p>
+          <h2 className="kd-split-text kd-title-ani mt-2 font-sans text-4xl font-black leading-tight text-white md:text-[40px]">
             Popular Events &amp; News
           </h2>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="txaa-slide-down-1 mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
           {posts.map((post) => (
             <article
               key={post.title}
-              className="overflow-hidden rounded-2xl bg-white shadow-lg"
+              className="txaa-slide-down-1-item group overflow-hidden rounded-2xl bg-white shadow-lg"
             >
-              <div className="relative aspect-[400/265] w-full">
+              <div className="relative aspect-[400/265] w-full overflow-hidden">
                 <Image
                   src={post.image}
                   alt={post.title}
                   fill
                   sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover"
+                  className="object-cover transition-transform duration-500 group-hover:[transform:perspective(600px)_rotateX(0.06deg)_scale(1.15)]"
                 />
               </div>
               <div className="p-6">

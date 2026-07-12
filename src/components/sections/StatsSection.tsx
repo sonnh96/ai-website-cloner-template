@@ -103,15 +103,17 @@ export function StatsSection() {
             Thousands of Courses Authored By Industry Experts
           </h2>
 
-          <div className="mt-10 grid grid-cols-2 gap-6 sm:gap-12">
+          <div className="txaa-slide-down-1 mt-10 grid grid-cols-2 gap-6 sm:gap-12">
             {STATS.map((stat) => (
-              <StatCounter key={stat.label} {...stat} start={hasAnimated} />
+              <div key={stat.label} className="txaa-slide-down-1-item">
+                <StatCounter {...stat} start={hasAnimated} />
+              </div>
             ))}
           </div>
         </div>
 
         {/* Floating "Get In Touch" contact card */}
-        <div className="relative z-10 mt-14 sm:-mb-24 sm:mt-16">
+        <div className="txaa-fade-right relative z-10 mt-14 sm:-mb-24 sm:mt-16">
           <div className="flex flex-col overflow-hidden rounded-2xl bg-[#1c1f3d] shadow-2xl sm:flex-row sm:items-stretch">
             <div className="flex flex-1 flex-col gap-6 p-6 sm:flex-row sm:items-center sm:gap-8 sm:p-8">
               <div className="flex items-center gap-4">

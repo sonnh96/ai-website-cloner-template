@@ -66,7 +66,7 @@ function CourseCard({ course, index }: { course: Course; index: number }) {
           alt={course.title}
           fill
           sizes="(max-width: 640px) 90vw, 320px"
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="object-cover transition-transform duration-500 group-hover:[transform:perspective(600px)_rotateX(0.06deg)_scale(1.15)]"
         />
         <span className="absolute right-3 top-3 rounded-full bg-white px-3 py-1 text-sm font-bold text-kd-heading shadow">
           {course.price}
@@ -131,9 +131,9 @@ export function CoursesSection() {
   return (
     <section className="bg-white px-6 py-20 lg:px-12 lg:py-28">
       <div className="mx-auto max-w-7xl">
-        <div className="kd-reveal flex flex-col items-center gap-3 text-center">
-          <span className="font-script text-3xl text-kd-primary">Get To Know Us</span>
-          <h2 className="text-[32px] font-black leading-tight text-kd-heading sm:text-[40px]">
+        <div className="flex flex-col items-center gap-3 text-center">
+          <span className="kd-subtitle-ani-1 font-script text-3xl text-kd-primary">Get To Know Us</span>
+          <h2 className="kd-split-text kd-title-ani text-[32px] font-black leading-tight text-kd-heading sm:text-[40px]">
             Most Popular Courses
           </h2>
         </div>
@@ -173,6 +173,7 @@ export function CoursesSection() {
                 ref={(el) => {
                   scrollRefs.current[tab.id] = el;
                 }}
+                data-kd-autoplay="5000"
                 className="flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
               >
                 {COURSES.map((course, i) => (

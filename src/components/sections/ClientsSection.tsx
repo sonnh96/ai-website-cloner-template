@@ -53,9 +53,9 @@ export function ClientsSection() {
         <h2 className="text-center text-lg font-medium text-kd-paragraph md:text-xl">
           Leading Universities And Companies
         </h2>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-8 md:justify-between">
+        <div className="txaa-slide-down-1 mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-8 md:justify-between">
           {clientLogos.map((logo) => (
-            <div key={logo.src} className="relative h-12 w-auto">
+            <div key={logo.src} className="txaa-slide-down-1-item relative h-12 w-auto">
               <Image
                 src={logo.src}
                 alt={logo.alt}

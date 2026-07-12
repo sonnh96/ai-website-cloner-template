@@ -30,19 +30,19 @@ export function PopularCategorySection() {
   };
 
   return (
-    <section className="kd-reveal relative overflow-hidden bg-white py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:gap-10">
           {/* Left: heading block */}
           <div className="shrink-0 text-center lg:w-[30%] lg:text-left">
-            <p className="inline-flex items-center gap-2 font-script text-2xl text-kd-primary">
+            <p className="kd-subtitle-ani-1 inline-flex items-center gap-2 font-script text-2xl text-kd-primary">
               <StarIcon className="size-4 fill-kd-primary text-kd-primary" />
               Online Classes
             </p>
-            <h2 className="mt-2 font-sans text-4xl font-black leading-tight text-kd-heading md:text-[40px]">
+            <h2 className="kd-split-text kd-title-ani mt-2 font-sans text-4xl font-black leading-tight text-kd-heading md:text-[40px]">
               Popular <span className="text-kd-primary">Category</span>
             </h2>
-            <p className="mt-4 text-kd-paragraph">
+            <p className="kd-reveal mt-4 text-kd-paragraph">
               We don&apos;t just work with concrete and steel.{" "}
               <span className="font-bold text-kd-heading">We are Approachable</span>
             </p>
@@ -67,6 +67,7 @@ export function PopularCategorySection() {
           <div className="relative lg:w-[70%]">
             <div
               ref={trackRef}
+              data-kd-autoplay="5000"
               className="scrollbar-none flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-4"
             >
               {categories.map((category) => (
@@ -75,7 +76,7 @@ export function PopularCategorySection() {
                   className="w-[220px] shrink-0 snap-start sm:w-[250px]"
                 >
                   <div className="flex flex-col items-center rounded-[28px] bg-[#f5f5f3] px-6 py-10 transition-transform duration-300 hover:-translate-y-1">
-                    <div className="relative flex size-32 items-center justify-center">
+                    <div className="kd-jello-hover relative flex size-32 items-center justify-center">
                       <Image
                         src="/images/kadu/2024/06/pc-1-shape-1.webp"
                         alt=""
@@ -89,7 +90,7 @@ export function PopularCategorySection() {
                         alt={category.label}
                         width={56}
                         height={56}
-                        className="relative z-10 size-14 object-contain"
+                        className="kd-jello-target relative z-10 size-14 object-contain"
                       />
                     </div>
                     <span className="mt-6 inline-flex items-center rounded-full bg-kd-heading px-4 py-1.5 text-sm font-bold text-white">

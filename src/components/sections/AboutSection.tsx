@@ -22,7 +22,7 @@ export function AboutSection() {
               Online courses from experts.
             </p>
 
-            <h2 className="kd-reveal mt-4 font-sans text-[40px] font-black leading-[1.15] tracking-tight md:text-[48px]">
+            <h2 className="kd-split-text kd-title-ani mt-4 font-sans text-[40px] font-black leading-[1.15] tracking-tight md:text-[48px]">
               <span className="block text-kd-heading">
                 Online Learning Wherever
               </span>
@@ -57,13 +57,13 @@ export function AboutSection() {
             <div className="relative mx-auto max-w-md lg:max-w-none">
               {/* Certified rotating badge */}
               <div className="absolute -left-4 -top-4 z-20 hidden items-center gap-3 md:flex lg:-left-8 lg:-top-6">
-                <div className="relative h-20 w-20 lg:h-24 lg:w-24">
+                <div className="txaa-roteted-1 relative h-20 w-20 lg:h-24 lg:w-24">
                   <Image
                     src="/images/kadu/2024/05/kd-a1-certified.webp"
                     alt="Certified badge"
                     fill
                     sizes="96px"
-                    className="object-contain [animation-duration:12s] animate-spin"
+                    className="object-contain"
                   />
                 </div>
                 <span className="max-w-[7rem] font-sans text-sm font-bold leading-snug text-kd-heading">
@@ -104,7 +104,7 @@ export function AboutSection() {
               </div>
 
               {/* Main photo */}
-              <div className="kd-reveal relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
+              <div className="kd-img-ani-1 relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
                 <Image
                   src="/images/kadu/2024/05/kd-a1-img-1.webp"
                   alt="Student learning online"
@@ -116,7 +116,7 @@ export function AboutSection() {
               </div>
 
               {/* Secondary circular photo */}
-              <div className="absolute -bottom-8 -left-6 z-10 h-28 w-28 overflow-hidden rounded-full border-4 border-white shadow-lg sm:h-36 sm:w-36 lg:-bottom-10 lg:-left-10 lg:h-40 lg:w-40">
+              <div className="kd-img-ani-1 absolute -bottom-8 -left-6 z-10 h-28 w-28 overflow-hidden rounded-full border-4 border-white shadow-lg sm:h-36 sm:w-36 lg:-bottom-10 lg:-left-10 lg:h-40 lg:w-40">
                 <Image
                   src="/images/kadu/2024/05/kd-a1-img-2.webp"
                   alt="Instructor portrait"

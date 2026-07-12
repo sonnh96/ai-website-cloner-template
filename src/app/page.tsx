@@ -1,3 +1,4 @@
+import { AnimationProvider } from "@/components/animation/AnimationProvider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
@@ -14,6 +15,7 @@ import { BlogSection } from "@/components/sections/BlogSection";
 export default function Home() {
   return (
     <>
+      <AnimationProvider />
       <Header />
       <main>
         <HeroSection />

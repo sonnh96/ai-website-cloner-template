@@ -7,9 +7,17 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+  --font-sans: var(--font-urbanist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+  --font-script: var(--font-just-another-hand), cursive;
   --font-heading: var(--font-sans);
+  --color-kd-heading: var(--kd-clr-h-1);
+  --color-kd-paragraph: var(--kd-clr-p-1);
+  --color-kd-primary: var(--kd-clr-pr-1);
+  --color-kd-danger: var(--kd-clr-pr-4);
+  --color-kd-secondary: var(--kd-clr-sd-1);
+  --color-kd-accent-green: var(--kd-clr-sd-4);
+  --ease-kd-bounce: var(--cube-1);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -49,21 +57,30 @@
 }
 
 :root {
+  /* Kadu theme design tokens (extracted from wp-content/themes/kadu/assets/css/main.css) */
+  --kd-clr-h-1: #363539;
+  --kd-clr-p-1: #797a84;
+  --kd-clr-pr-1: #005e4f;
+  --kd-clr-pr-4: #d70007;
+  --kd-clr-sd-1: #ef991f;
+  --kd-clr-sd-4: #08d565;
+  --cube-1: cubic-bezier(0.57, 0.21, 0.69, 1.25);
+
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --foreground: var(--kd-clr-h-1);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: var(--kd-clr-h-1);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --popover-foreground: var(--kd-clr-h-1);
+  --primary: var(--kd-clr-pr-1);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
+  --secondary: var(--kd-clr-sd-1);
+  --secondary-foreground: #22281e;
   --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
+  --muted-foreground: var(--kd-clr-p-1);
+  --accent: var(--kd-clr-sd-1);
+  --accent-foreground: #22281e;
+  --destructive: var(--kd-clr-pr-4);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
@@ -125,6 +142,23 @@
     @apply bg-background text-foreground;
   }
   html {
-    @apply font-sans;
+    @apply font-sans scroll-smooth;
   }
+}
+
+/* Scroll-reveal entrance animation (WOW.js-equivalent used across all Kadu sections) */
+@keyframes kd-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.kd-reveal {
+  opacity: 0;
+  animation: kd-fade-in-up 0.8s ease forwards;
 }

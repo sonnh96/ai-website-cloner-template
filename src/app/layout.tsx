@@ -1,20 +1,30 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Urbanist, Just_Another_Hand } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const urbanist = Urbanist({
+  variable: "--font-urbanist",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const justAnotherHand = Just_Another_Hand({
+  variable: "--font-just-another-hand",
   subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
-  title: "Website Clone",
-  description: "Pixel-perfect website clone",
+  title: "Kadu - Online Platform For Education",
+  description:
+    "Kadu is an online learning platform offering courses, events, and educational resources.",
+  icons: {
+    icon: [
+      { url: "/seo/cropped-favicon-32x32.png", sizes: "32x32" },
+      { url: "/seo/cropped-favicon-192x192.png", sizes: "192x192" },
+    ],
+    apple: "/seo/cropped-favicon-180x180.png",
+  },
 };
 
 export default function RootLayout({
@@ -25,7 +35,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${urbanist.variable} ${justAnotherHand.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

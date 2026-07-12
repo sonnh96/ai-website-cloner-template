@@ -15,9 +15,9 @@ const justAnotherHand = Just_Another_Hand({
 });
 
 export const metadata: Metadata = {
-  title: "Kadu - Online Platform For Education",
+  title: "CIS - Online Platform For Education",
   description:
-    "Kadu is an online learning platform offering courses, events, and educational resources.",
+    "CIS is an online learning platform offering courses, events, and educational resources.",
   icons: {
     icon: [
       { url: "/seo/cropped-favicon-32x32.png", sizes: "32x32" },

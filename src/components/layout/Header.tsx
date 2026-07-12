@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   HomeIcon,
@@ -8,6 +7,7 @@ import {
   ChevronDownIcon,
   ArrowRightIcon,
 } from "@/components/icons";
+import { Logo } from "@/components/layout/Logo";
 import type { NavItem } from "@/types/kadu";
 
 const navItems: NavItem[] = [
@@ -108,14 +108,7 @@ export function Header() {
       <div className="flex items-center justify-between bg-kd-primary px-6 py-4 lg:px-12">
         <div className="flex items-center gap-10">
           <Link href="/" className="flex items-center gap-1">
-            <Image
-              src="/images/kadu/2024/05/logo-wh.svg"
-              alt="Kadu"
-              width={120}
-              height={32}
-              className="h-8 w-auto"
-              priority
-            />
+            <Logo className="text-white" />
           </Link>
           <span className="flex size-11 items-center justify-center rounded-full bg-white/10 text-white">
             <HomeIcon className="size-4" />

@@ -261,6 +261,11 @@
   transform: translateY(-50px);
   opacity: 0;
 }
+.kd-hero-1-item .kd-hero-img-1 {
+  /* collapsed to the bottom edge — reveals upward as the photo slides in */
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  transition: clip-path 1s var(--cube-1);
+}
 .kd-hero-1-item .kd-hero-img-1 img {
   transform: translateY(100%);
   transition: 1s ease-in-out;
@@ -293,9 +298,15 @@
   opacity: 1;
   transition-delay: 2s;
 }
+/* Staged image sequence: deco il-1 (.5s) → deco il-2 (.8s) → img-2 circle zoom (1s)
+   → img-1 clip-path reveal + top-up slide (2.1s, after the zoom completes). */
+.kd-hero-1-item.is-active .kd-hero-img-1 {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  transition-delay: 2.1s;
+}
 .kd-hero-1-item.is-active .kd-hero-img-1 img {
   transform: translateY(0);
-  transition-delay: 1s;
+  transition-delay: 2.1s;
 }
 .kd-hero-1-item.is-active .kd-hero-img-2 img {
   transform: scale(1);
@@ -309,5 +320,5 @@
 .kd-hero-1-item.is-active .kd-hero-il-2 {
   transform: rotate(0deg);
   opacity: 1;
-  transition-delay: 0.5s;
+  transition-delay: 0.8s;
 }
